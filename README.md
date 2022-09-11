@@ -10,3 +10,5 @@
 ### `npm install`
 
 2) In the project directory, you can launch the application using (В каталоге проекта можно запустить приложение с помощью):
+
+### `npm start`
