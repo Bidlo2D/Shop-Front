@@ -17,11 +17,11 @@ const Header = () => {
     <img src={bucket} />,
   ]
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <span className={styles.name}>Antonio Lucchi</span>
       <Menu style={textStyle.menu} items={titles} />
       <Menu style={imageStyle.menu} items={images} />
-    </div>
+    </header>
   )
 }
 

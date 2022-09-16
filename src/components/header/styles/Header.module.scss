@@ -1,9 +1,9 @@
-@import "../../css/vars.css";
+@import "../../styles/vars.scss";
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 75px;
+  padding: 10px 75px;
   background-color: $color-main;
 }
 .name {

@@ -1,1 +1,1 @@
-@import"../../css/vars.css";.menu{text-align:center}.menu li{cursor:pointer;display:inline-block;margin-left:30px}.menu li img{width:30px;height:30px}.menu li:first-child{margin-left:0px}
+.menu{display:flex;justify-content:space-between;text-align:center;width:375px}.menu li{cursor:pointer}
