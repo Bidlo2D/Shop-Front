@@ -1,16 +1,14 @@
-@import "../../css/vars.css";
+@import "../../styles/vars.scss";
 .menu {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+  width: 125px;
   li {
     cursor: pointer;
-    display: inline-block;
-    margin-left: $margin-left-menu;
     img {
-      width: 30px;
-      height: 30px;
+      width: $icon-width-height;
+      height: $icon-width-height;
     }
-  }
-  li:first-child {
-    margin-left: 0px;
   }
 }

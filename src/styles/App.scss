@@ -1,7 +1,9 @@
 @import "nullStyles.scss";
+@import "fonts.scss";
 .App {
   display: flex;
   justify-content: center;
+  font-family: "NWTBodoni-Regular";
 }
 .wrapper {
   width: 1000px;
