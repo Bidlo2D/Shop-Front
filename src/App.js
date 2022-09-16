@@ -3,7 +3,7 @@ import React from "react"
 import './css/App.css';
 // components
 import Header from './components/header/Header';
-import Content from './components/main/Content';
+import Content from './components/content/Content';
 import Footer from './components/footer/Footer';
 const App = () => {
   return (
