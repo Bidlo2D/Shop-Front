@@ -1,0 +1,44 @@
+@import "fontsContent.scss";
+@import "../../styles/vars.scss";
+$margin-section: 8px;
+$padding-section: 18px;
+$percent-width: 30%;
+.sections {
+  font-size: 28px;
+  font-family: "NWTBodoni-Regular";
+  margin-top: $margin-content-bottom;
+}
+.section {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: $margin-section;
+}
+.section40pR {
+  background: $color-main;
+  padding: $padding-section;
+  margin-right: $margin-section;
+  width: $percent-width;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.section40pL {
+  background: $color-main;
+  padding: $padding-section;
+  margin-left: $margin-section;
+  width: $percent-width;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.section60p {
+  background: $color-main;
+  padding: $padding-section;
+  width: 100% - $percent-width;
+  img {
+    width: 500px;
+    height: 200px;
+  }
+}

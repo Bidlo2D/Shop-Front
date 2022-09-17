@@ -1,5 +1,5 @@
-@import "vars.scss";
-
+@import "../../styles/vars.scss";
+@import "fontsContent.scss";
 .title {
   color: white;
   margin-bottom: 325px;
@@ -9,6 +9,7 @@
 }
 .bigText {
   font-size: 50px;
+  font-family: "NWTBodoni-Regular";
   text-transform: uppercase;
   margin-bottom: 8px;
 }
