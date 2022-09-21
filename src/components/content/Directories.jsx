@@ -1,7 +1,6 @@
 import React from "react"
 // components
 import Section from "./Section"
-import SectionBlock from "./SectionBlock"
 // styles
 import styles from "./css/Sections.module.css"
 // images

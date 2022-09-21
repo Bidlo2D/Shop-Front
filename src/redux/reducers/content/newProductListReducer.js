@@ -1,5 +1,5 @@
 const initialState = {}
-export const secondReducer = (state = initialState, action) => {
+export const newProductListReducer = (state = initialState, action) => {
     switch (action.type) {
         default:
             return state;

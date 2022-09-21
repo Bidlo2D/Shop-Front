@@ -1,0 +1,53 @@
+@import "../../styles/vars.scss";
+$margin-items: 35px;
+.main {
+  margin-top: $margin-content-bottom;
+}
+.list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  :nth-child(2) {
+    position: absolute;
+    height: 70%;
+    top: 15%;
+    left: 75px;
+    margin: auto;
+    z-index: 0;
+  }
+  :nth-child(3) {
+    /*     margin-left: auto;
+    margin-right: auto; */
+    z-index: 1;
+  }
+  :nth-child(4) {
+    position: absolute;
+    height: 70%;
+    top: 15%;
+    right: 75px;
+    margin: auto;
+    z-index: 0;
+  }
+}
+.title {
+  margin-bottom: $margin-items;
+  font-size: $font-size-titles;
+  font-family: $font-family-titles;
+}
+.button {
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: $margin-items;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  background: $color-main;
+  border-radius: $border-radius-main;
+  width: max-content;
+}
+.arrow {
+  font-size: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}

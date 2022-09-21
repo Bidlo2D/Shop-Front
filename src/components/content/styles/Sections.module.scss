@@ -4,8 +4,8 @@ $margin-section: 8px;
 $padding-section: 18px;
 $percent-width: 30%;
 .sections {
-  font-size: 28px;
-  font-family: "NWTBodoni-Regular";
+  font-size: $font-size-titles;
+  font-family: $font-family-titles;
   margin-top: $margin-content-bottom;
 }
 .section {
@@ -17,6 +17,7 @@ $percent-width: 30%;
   background: $color-main;
   padding: $padding-section;
   margin-right: $margin-section;
+  border-radius: $border-radius-main;
   width: $percent-width;
   img {
     width: 200px;
@@ -27,6 +28,7 @@ $percent-width: 30%;
   background: $color-main;
   padding: $padding-section;
   margin-left: $margin-section;
+  border-radius: $border-radius-main;
   width: $percent-width;
   img {
     width: 200px;
@@ -37,6 +39,7 @@ $percent-width: 30%;
   background: $color-main;
   padding: $padding-section;
   width: 100% - $percent-width;
+  border-radius: $border-radius-main;
   img {
     width: 500px;
     height: 200px;
