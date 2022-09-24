@@ -4,29 +4,14 @@ $margin-items: 35px;
   margin-top: $margin-content-bottom;
 }
 .list {
-  position: relative;
   display: flex;
   justify-content: space-between;
+}
+.listWrapper {
+  display: flex;
   :nth-child(2) {
-    position: absolute;
-    height: 70%;
-    top: 15%;
-    left: 75px;
-    margin: auto;
-    z-index: 0;
-  }
-  :nth-child(3) {
-    /*     margin-left: auto;
-    margin-right: auto; */
-    z-index: 1;
-  }
-  :nth-child(4) {
-    position: absolute;
-    height: 70%;
-    top: 15%;
-    right: 75px;
-    margin: auto;
-    z-index: 0;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 .title {
@@ -46,8 +31,19 @@ $margin-items: 35px;
   border-radius: $border-radius-main;
   width: max-content;
 }
-.arrow {
-  font-size: 50px;
+.arrowBlock {
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  padding: 5px;
   margin-top: auto;
   margin-bottom: auto;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.arrow {
+  height: 100%;
+  width: 100%;
 }

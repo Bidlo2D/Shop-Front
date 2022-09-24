@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { firstReducer } from "./reducers/header/firstReducer";
-import { newProductListReducer } from "./reducers/content/newProductListReducer";
+import { ideaListReducer } from "./reducers/content/ideaListReducer";
 export const rootReducer = combineReducers({
     firstReducer,
-    newProductListReducer
+    ideaListReducer
 });
