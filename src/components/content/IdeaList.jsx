@@ -1,7 +1,11 @@
 import React from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { ideasLoad, movingRight } from "../../redux/reducers/content/action"
+import {
+  ideasLoad,
+  movingLeft,
+  movingRight,
+} from "../../redux/reducers/content/action"
 // components
 import Idea from "./Idea"
 // styles
@@ -15,15 +19,21 @@ const IdeaList = () => {
   const ideas = useSelector((state) => {
     return state.ideaListReducer.ideasShow
   })
+
   useEffect(() => {
     dispatch(ideasLoad())
-  }, [])
+  }, [dispatch])
   return (
     <div className={styles.main}>
       <div className={styles.title}>Идеи для интерьеров</div>
       <div className={styles.list}>
-        <div className={styles.arrowBlock}>
-          <img src={arrowL} className={styles.arrow}></img>
+        <div
+          onClick={() => {
+            dispatch(movingLeft())
+          }}
+          className={styles.arrowBlock}
+        >
+          <img src={arrowL} className={styles.arrow} alt=""></img>
         </div>
         <div className={styles.listWrapper}>
           {ideas.map((idea, index) => (
@@ -32,11 +42,11 @@ const IdeaList = () => {
         </div>
         <div
           onClick={() => {
-            movingRight()
+            dispatch(movingRight())
           }}
           className={styles.arrowBlock}
         >
-          <img src={arrowR} className={styles.arrow}></img>
+          <img src={arrowR} className={styles.arrow} alt=""></img>
         </div>
       </div>
       <div className={styles.button}>Посмотреть все идеи</div>
