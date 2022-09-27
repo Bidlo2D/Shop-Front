@@ -1,7 +1,16 @@
 import React from "react"
-import styles from "./css/Footer.module.css"
+// styles
+import "./css/Footer.css"
+// components
+import Mailing from "./Mailing"
+import About from "./About"
 const Footer = () => {
-  return <footer className={styles.footer}>Footer</footer>
+  return (
+    <footer>
+      <Mailing />
+      <About />
+    </footer>
+  )
 }
 
 export default Footer

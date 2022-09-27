@@ -33,7 +33,12 @@ const IdeaList = () => {
           }}
           className={styles.arrowBlock}
         >
-          <img src={arrowL} className={styles.arrow} alt=""></img>
+          <img
+            draggable="false"
+            src={arrowL}
+            className={styles.arrow}
+            alt=""
+          ></img>
         </div>
         <div className={styles.listWrapper}>
           {ideas.map((idea, index) => (
@@ -46,7 +51,12 @@ const IdeaList = () => {
           }}
           className={styles.arrowBlock}
         >
-          <img src={arrowR} className={styles.arrow} alt=""></img>
+          <img
+            draggable="false"
+            src={arrowR}
+            className={styles.arrow}
+            alt=""
+          ></img>
         </div>
       </div>
       <div className={styles.button}>Посмотреть все идеи</div>

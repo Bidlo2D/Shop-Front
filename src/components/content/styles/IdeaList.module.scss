@@ -32,10 +32,10 @@ $margin-items: 35px;
   width: max-content;
 }
 .arrowBlock {
+  user-select: none;
   cursor: pointer;
   height: 30px;
   width: 30px;
-  font-size: 15px;
   padding: 5px;
   margin-top: auto;
   margin-bottom: auto;

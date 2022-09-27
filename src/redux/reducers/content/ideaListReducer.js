@@ -21,7 +21,7 @@ export const ideaListReducer = (state = initialState, action) => {
                 const { ideas, head, end } = state
                 const indexH = head < ideas.length - 1 ? (head + 1) : (0)
                 const indexE = end < ideas.length - 1 ? (end + 1) : (0)
-                const rightMovingIdeas = [ideas.at(indexH - 1), ideas[indexH], ideas[indexE]]
+                const rightMovingIdeas = [ideas.at(indexH - 1), ideas.at(indexH), ideas.at(indexE)]
                 return { ...state, head: indexH, end: indexE, ideasShow: rightMovingIdeas }
             })()
         case IDEAS_MOVING_LEFT:
@@ -30,6 +30,7 @@ export const ideaListReducer = (state = initialState, action) => {
                 const indexH = (head * -1) < ideas.length - 1 ? (head - 1) : (0)
                 const indexE = (end * -1) < ideas.length - 1 ? (end - 1) : (0)
                 const rightMovingIdeas = [ideas.at(indexH - 1), ideas.at(indexH), ideas.at(indexE)]
+                //console.log(`head - 1 = ${indexH - 1}, head = ${indexH}, end = ${indexE}`);
                 return { ...state, head: indexH, end: indexE, ideasShow: rightMovingIdeas }
             })()
         case IDEAS_LOAD:
