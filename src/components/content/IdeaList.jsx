@@ -8,6 +8,7 @@ import {
 } from "../../redux/reducers/content/action"
 // components
 import Idea from "./Idea"
+import ButtonAction from "../ButtonAction"
 // styles
 import styles from "./css/IdeaList.module.css"
 // images
@@ -19,19 +20,21 @@ const IdeaList = () => {
   const ideas = useSelector((state) => {
     return state.ideaListReducer.ideasShow
   })
-
+  /* Load */
   useEffect(() => {
     dispatch(ideasLoad())
   }, [dispatch])
+
   return (
     <div className={styles.main}>
       <div className={styles.title}>Идеи для интерьеров</div>
       <div className={styles.list}>
-        <div
+        {/* Arrow Left */}
+        <ButtonAction
           onClick={() => {
             dispatch(movingLeft())
           }}
-          className={styles.arrowBlock}
+          style={styles.arrowBlock}
         >
           <img
             draggable="false"
@@ -39,17 +42,19 @@ const IdeaList = () => {
             className={styles.arrow}
             alt=""
           ></img>
-        </div>
+        </ButtonAction>
+        {/* List ideas */}
         <div className={styles.listWrapper}>
           {ideas.map((idea, index) => (
             <Idea key={index} name={idea.title} image={idea.image} />
           ))}
         </div>
-        <div
+        {/* Arrow Right */}
+        <ButtonAction
           onClick={() => {
             dispatch(movingRight())
           }}
-          className={styles.arrowBlock}
+          style={styles.arrowBlock}
         >
           <img
             draggable="false"
@@ -57,7 +62,7 @@ const IdeaList = () => {
             className={styles.arrow}
             alt=""
           ></img>
-        </div>
+        </ButtonAction>
       </div>
       <div className={styles.button}>Посмотреть все идеи</div>
     </div>

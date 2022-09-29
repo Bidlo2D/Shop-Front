@@ -1,1 +1,1 @@
-.menu{display:flex;justify-content:space-between;text-align:center;width:375px}.menu li{cursor:pointer}
+.menu{margin:auto 0}.menu ul{display:flex;justify-content:space-between;text-align:center;width:375px}.menu ul li{cursor:pointer}

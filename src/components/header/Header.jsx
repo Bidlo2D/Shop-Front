@@ -1,6 +1,6 @@
 import React from "react"
 // styles
-import styles from "./css/Header.module.css"
+import "./css/Header.css"
 import textStyle from "./css/MenuText.module.css"
 import imageStyle from "./css/MenuImage.module.css"
 // images
@@ -8,17 +8,18 @@ import bucket from "./images/bucketShop.png"
 import search from "./images/search.png"
 import heart from "./images/heart.png"
 // components
-import Menu from "./Menu"
+import Menu from "../Menu"
+import OrgName from "../OrgName"
 const Header = () => {
   const titles = ["Каталог", "Дизайнерам", "Шоу-рум", "Доставка и оплата"]
   const images = [
-    <img src={search} />,
-    <img src={heart} />,
-    <img src={bucket} />,
+    <img src={search} alt="" />,
+    <img src={heart} alt="" />,
+    <img src={bucket} alt="" />,
   ]
   return (
-    <header className={styles.header}>
-      <span className={styles.name}>Antonio Lucchi</span>
+    <header className="header">
+      <OrgName />
       <Menu style={textStyle.menu} items={titles} />
       <Menu style={imageStyle.menu} items={images} />
     </header>

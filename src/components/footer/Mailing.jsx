@@ -9,7 +9,12 @@ const Mailing = () => {
           Подпишитесь на рассылку и получите скидку 15% на первый заказ{" "}
         </p>
         <form action="" className={styles.formMail}>
-          <input className={styles.mail} type="text" value="Ваш e-mail" />
+          <input
+            className={styles.mail}
+            type="text"
+            name="mail"
+            placeholder="Ваш e-mail"
+          />
           <input className={styles.button} type="button" value="Подписаться" />
         </form>
       </div>

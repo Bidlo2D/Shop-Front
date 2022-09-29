@@ -1,10 +1,12 @@
-@import "../../styles/vars.scss";
 .menu {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  width: 375px;
-  li {
-    cursor: pointer;
+  margin: auto 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 375px;
+    li {
+      cursor: pointer;
+    }
   }
 }

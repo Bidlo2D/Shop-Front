@@ -5,9 +5,9 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-    width: 115px;
     li {
       cursor: pointer;
+      margin-top: 10px;
       img {
         width: $icon-width-height;
         height: $icon-width-height;
