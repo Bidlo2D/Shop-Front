@@ -1,10 +1,11 @@
 .menu {
   margin: auto 0;
+  font-size: 16px;
   ul {
     display: flex;
     justify-content: space-between;
     text-align: center;
-    width: 375px;
+    width: 400px;
     li {
       cursor: pointer;
     }

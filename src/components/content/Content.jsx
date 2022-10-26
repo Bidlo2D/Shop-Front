@@ -1,19 +1,23 @@
 import React from "react"
 // styles
-import "./css/Content.css"
-import Description from "./Description"
-import Directories from "./Directories"
-import IdeaList from "./IdeaList"
+import styles from "./css/Content.module.css"
 // components
 import Title from "./Title"
+import Sections from "./Sections"
+import Mailing from "./Mailing"
+import Description from "./Description"
+import IdeaList from "./IdeaList"
 
 const Content = () => {
   return (
-    <div className="content">
-      <Title />
-      <Description />
-      <Directories />
-      <IdeaList />
+    <div className={styles.content}>
+      <div className={styles.wrapper}>
+        <Title />
+        <Description />
+        <Sections />
+        <IdeaList />
+      </div>
+      <Mailing />
     </div>
   )
 }

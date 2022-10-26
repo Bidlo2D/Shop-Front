@@ -1,6 +1,6 @@
 import React from "react"
 // styles
-import "./css/Header.css"
+import styles from "./css/Header.module.css"
 import textStyle from "./css/MenuText.module.css"
 import imageStyle from "./css/MenuImage.module.css"
 // images
@@ -18,7 +18,7 @@ const Header = () => {
     <img src={bucket} alt="" />,
   ]
   return (
-    <header className="header">
+    <header className={styles.header}>
       <OrgName />
       <Menu style={textStyle.menu} items={titles} />
       <Menu style={imageStyle.menu} items={images} />

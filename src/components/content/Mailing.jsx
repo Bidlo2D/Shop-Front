@@ -1,5 +1,4 @@
 import React from "react"
-import backGround from "./images/Mailing.png"
 import styles from "./css/Mailing.module.css"
 const Mailing = () => {
   return (
