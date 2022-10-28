@@ -1,8 +1,8 @@
-import { IDEAS_MOVING_LEFT, IDEAS_MOVING_RIGHT, IDEAS_LOAD } from "./types";
 import imageTest1 from "../../../components/content/images/test/imageTest1.jpg"
 import imageTest2 from "../../../components/content/images/test/imageTest2.jpg"
 import imageTest3 from "../../../components/content/images/test/imageTest3.jpg"
 import imageTest4 from "../../../components/content/images/test/imageTest4.jpg"
+import { createAction, createReducer } from "@reduxjs/toolkit";
 const initialState = {
     ideas: [
         { title: "Гостинная в светлых тонах с акцентом на диване Monreal", image: imageTest1 },
@@ -14,32 +14,23 @@ const initialState = {
     head: 0,
     end: 1
 }
-export const ideaListReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case IDEAS_MOVING_RIGHT:
-            return (() => {
-                const { ideas, head, end } = state
-                const indexH = head < ideas.length - 1 ? (head + 1) : (0)
-                const indexE = end < ideas.length - 1 ? (end + 1) : (0)
-                const rightMovingIdeas = [ideas.at(indexH - 1), ideas.at(indexH), ideas.at(indexE)]
-                return { ...state, head: indexH, end: indexE, ideasShow: rightMovingIdeas }
-            })()
-        case IDEAS_MOVING_LEFT:
-            return (() => {
-                const { ideas, head, end } = state
-                const indexH = (head * -1) < ideas.length - 1 ? (head - 1) : (0)
-                const indexE = (end * -1) < ideas.length - 1 ? (end - 1) : (0)
-                const rightMovingIdeas = [ideas.at(indexH - 1), ideas.at(indexH), ideas.at(indexE)]
-                //console.log(`head - 1 = ${indexH - 1}, head = ${indexH}, end = ${indexE}`);
-                return { ...state, head: indexH, end: indexE, ideasShow: rightMovingIdeas }
-            })()
-        case IDEAS_LOAD:
-            return (() => {
-                const { ideas, head, end } = state
-                const ideasLoad = [ideas.at(head - 1), ideas[head], ideas[end]]
-                return { ...state, ideasShow: ideasLoad };
-            })()
-        default:
-            return state;
+
+export const ideasMovingLeft = createAction("IDEAS_MOVING_LEFT");
+export const ideasMovingRight = createAction("IDEAS_MOVING_RIGHT");
+export const ideasLoad = createAction("IDEAS_LOAD");
+
+export default createReducer(initialState, {
+    [ideasMovingLeft]: function (state) {
+        state.head = state.head < state.ideas.length - 1 ? (state.head + 1) : (0)
+        state.end = state.end < state.ideas.length - 1 ? (state.end + 1) : (0)
+        state.ideasShow = [state.ideas.at(state.head - 1), state.ideas.at(state.head), state.ideas.at(state.end)]
+    },
+    [ideasMovingRight]: function (state) {
+        state.head = (state.head * -1) < state.ideas.length - 1 ? (state.head - 1) : (0)
+        state.end = (state.end * -1) < state.ideas.length - 1 ? (state.end - 1) : (0)
+        state.ideasShow = [state.ideas.at(state.head - 1), state.ideas.at(state.head), state.ideas.at(state.end)]
+    },
+    [ideasLoad]: function (state) {
+        state.ideasShow = [state.ideas.at(state.head - 1), state.ideas[state.head], state.ideas[state.end]]
     }
-}
+})

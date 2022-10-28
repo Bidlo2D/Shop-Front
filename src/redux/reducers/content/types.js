@@ -1,3 +1,0 @@
-export const IDEAS_MOVING_LEFT = "IDEAS_MOVING_LEFT";
-export const IDEAS_MOVING_RIGHT = "IDEAS_MOVING_RIGHT";
-export const IDEAS_LOAD = "IDEAS_LOAD";

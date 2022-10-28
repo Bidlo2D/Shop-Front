@@ -1,7 +1,8 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 //action
-import { visibleOnOff } from "../../redux/reducers/header/action"
+import { searchDeployment } from "../../redux/reducers/header/searchReducer"
+//import { visibleOnOff } from "../../redux/reducers/header/action"
 // styles
 import styles from "./css/Header.module.css"
 import textStyle from "./css/MenuText.module.css"
@@ -17,18 +18,20 @@ import ButtonAction from "../ButtonAction"
 const Header = () => {
   const dispatch = useDispatch()
   const visible = useSelector((state) => {
-    return state.searchReducer.visible
+    return state.search.visible
   })
+
   const titles = [
     <ButtonAction>Каталог</ButtonAction>,
     <ButtonAction>Дизайнерам</ButtonAction>,
     <ButtonAction>Шоу-рум</ButtonAction>,
     <ButtonAction>Доставка и оплата</ButtonAction>,
   ]
+
   const images = [
     <ButtonAction
       onClick={() => {
-        dispatch(visibleOnOff(!visible))
+        dispatch(searchDeployment())
       }}
     >
       <img src={search} alt="" />
@@ -40,6 +43,7 @@ const Header = () => {
       <img src={bucket} alt="" />
     </ButtonAction>,
   ]
+
   return (
     <header className={styles.header}>
       <OrgName />

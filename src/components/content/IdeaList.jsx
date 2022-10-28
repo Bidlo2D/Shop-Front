@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux"
 //action
 import {
   ideasLoad,
-  movingLeft,
-  movingRight,
-} from "../../redux/reducers/content/action"
+  ideasMovingRight,
+  ideasMovingLeft,
+} from "../../redux/reducers/content/ideaListReducer"
 // components
 import Idea from "./Idea"
 import ButtonAction from "../ButtonAction"
@@ -19,7 +19,7 @@ import arrowR from "./images/arrowR.png"
 const IdeaList = () => {
   const dispatch = useDispatch()
   const ideas = useSelector((state) => {
-    return state.ideaListReducer.ideasShow
+    return state.ideas.ideasShow
   })
   /* Load */
   useEffect(() => {
@@ -33,7 +33,7 @@ const IdeaList = () => {
         {/* Arrow Left */}
         <ButtonAction
           onClick={() => {
-            dispatch(movingLeft())
+            dispatch(ideasMovingLeft())
           }}
           style={styles.arrowBlock}
         >
@@ -53,7 +53,7 @@ const IdeaList = () => {
         {/* Arrow Right */}
         <ButtonAction
           onClick={() => {
-            dispatch(movingRight())
+            dispatch(ideasMovingRight())
           }}
           style={styles.arrowBlock}
         >

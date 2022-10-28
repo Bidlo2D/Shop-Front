@@ -1,12 +1,12 @@
-import { SEARCH_VISIBLE_ON_OFF } from "./types";
+import { createAction, createReducer } from "@reduxjs/toolkit";
+
 const initialState = {
-    visible: false
+    visible: true
 }
-export const searchReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SEARCH_VISIBLE_ON_OFF:
-            return { state, visible: action.active };
-        default:
-            return state;
+export const searchDeployment = createAction("SEARCH_DEPLOYMENT")
+
+export default createReducer(initialState, {
+    [searchDeployment]: function (state) {
+        state.visible = !state.visible;
     }
-}
+})

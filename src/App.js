@@ -1,14 +1,14 @@
 import React from "react"
 // styles
-import './css/App.css';
+import styles from './css/App.module.css';
 // components
 import Header from './components/header/Header';
 import Content from './components/content/Content';
 import Footer from './components/footer/Footer';
 const App = () => {
   return (
-    <div className="App">
-      <div className="wrapper">
+    <div className={styles.App}>
+      <div className={styles.wrapper}>
         <Header />
         <Content />
         <Footer />
