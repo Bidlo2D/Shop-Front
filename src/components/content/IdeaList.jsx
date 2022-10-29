@@ -21,6 +21,7 @@ const IdeaList = () => {
   const ideas = useSelector((state) => {
     return state.ideas.ideasShow
   })
+
   /* Load */
   useEffect(() => {
     dispatch(ideasLoad())

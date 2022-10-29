@@ -1,22 +1,20 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-//action
-import { searchDeployment } from "../../redux/reducers/header/searchReducer"
-//import { visibleOnOff } from "../../redux/reducers/header/action"
+import { useSelector } from "react-redux"
+//import { useState } from "react"
 // styles
 import styles from "./css/Header.module.css"
 import textStyle from "./css/MenuText.module.css"
 import imageStyle from "./css/MenuImage.module.css"
 // images
 import bucket from "./images/bucketShop.png"
-import search from "./images/search.png"
 import heart from "./images/heart.png"
 // components
 import Menu from "../Menu"
 import OrgName from "../OrgName"
 import ButtonAction from "../ButtonAction"
+import SearchTab from "./SearchTab"
+
 const Header = () => {
-  const dispatch = useDispatch()
   const visible = useSelector((state) => {
     return state.search.visible
   })
@@ -29,13 +27,7 @@ const Header = () => {
   ]
 
   const images = [
-    <ButtonAction
-      onClick={() => {
-        dispatch(searchDeployment())
-      }}
-    >
-      <img src={search} alt="" />
-    </ButtonAction>,
+    <SearchTab />,
     <ButtonAction>
       <img src={heart} alt="" />
     </ButtonAction>,

@@ -1,1 +1,1 @@
-.menu{margin:auto 0}.menu ul{display:flex;justify-content:space-between;text-align:center;width:115px}.menu ul li{cursor:pointer}.menu ul li img{width:25px;height:25px}
+.menu ul{display:flex;text-align:center;width:-webkit-max-content;width:-moz-max-content;width:max-content}.menu ul li{margin-right:15px;margin-top:auto;margin-bottom:auto;cursor:pointer}.menu ul li img{width:25px;height:25px}
