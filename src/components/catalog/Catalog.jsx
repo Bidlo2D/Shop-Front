@@ -3,7 +3,7 @@ import React from "react"
 import styles from "./css/Catalog.module.css"
 
 const Catalog = () => {
-  return <div></div>
+  return <div>Catalog!</div>
 }
 
 export default Catalog

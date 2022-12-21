@@ -9,7 +9,6 @@ import {
 } from "../../redux/reducers/content/ideaListReducer"
 // components
 import Idea from "./Idea"
-import ButtonAction from "../ButtonAction"
 // styles
 import styles from "./css/IdeaList.module.css"
 // images
@@ -32,11 +31,11 @@ const IdeaList = () => {
       <div className={styles.title}>Идеи для интерьеров</div>
       <div className={styles.list}>
         {/* Arrow Left */}
-        <ButtonAction
+        <div
           onClick={() => {
             dispatch(ideasMovingLeft())
           }}
-          style={styles.arrowBlock}
+          className={styles.arrowBlock}
         >
           <img
             draggable="false"
@@ -44,7 +43,7 @@ const IdeaList = () => {
             className={styles.arrow}
             alt=""
           ></img>
-        </ButtonAction>
+        </div>
         {/* List ideas */}
         <div className={styles.listWrapper}>
           {ideas.map((idea, index) => (
@@ -52,11 +51,11 @@ const IdeaList = () => {
           ))}
         </div>
         {/* Arrow Right */}
-        <ButtonAction
+        <div
           onClick={() => {
             dispatch(ideasMovingRight())
           }}
-          style={styles.arrowBlock}
+          className={styles.arrowBlock}
         >
           <img
             draggable="false"
@@ -64,7 +63,7 @@ const IdeaList = () => {
             className={styles.arrow}
             alt=""
           ></img>
-        </ButtonAction>
+        </div>
       </div>
       <div className={styles.button}>Посмотреть все идеи</div>
     </div>
