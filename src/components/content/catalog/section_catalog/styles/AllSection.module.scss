@@ -1,0 +1,19 @@
+@import "../../css/FontsContent.css";
+@import "../../../../styles/vars.scss";
+
+.item {
+  cursor: pointer;
+  width: 100%;
+  height: 375px;
+  padding: 15px;
+  font-size: $font-size-titles;
+  font-family: $font-family-titles;
+  background: url(./../images/AllFurniture.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: $border-radius-main;
+  margin-bottom: $margin-section;
+  p {
+    margin-left: $margin-section-text-left;
+  }
+}

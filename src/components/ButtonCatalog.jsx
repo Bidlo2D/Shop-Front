@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 // actions
 import { changeContent } from "./../redux/reducers/content/contentViewReducer"
 // components
-import Catalog from "./catalog/Catalog"
+import Catalog from "./content/catalog/Catalog"
 
 const ButtonCatalog = (props) => {
   const dispatch = useDispatch()

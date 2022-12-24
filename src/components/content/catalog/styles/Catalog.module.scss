@@ -1,2 +1,19 @@
+@import "../../../styles/vars.scss";
+@import "./../css/FontsContent.css";
 .catalog {
+  position: relative;
+  height: max-content;
+}
+.wrapper {
+  padding: 70px;
+}
+.directory {
+  font-size: 20px;
+  font-family: $font-family-titles;
+  margin-bottom: $margin-content-bottom;
+}
+.chapter {
+  font-size: 32px;
+  font-family: $font-family-titles;
+  margin-bottom: $margin-content-bottom;
 }

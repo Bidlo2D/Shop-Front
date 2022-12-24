@@ -3,8 +3,8 @@
   display: flex;
   justify-content: space-around;
   :first-child {
-    margin-right: 8px;
-    margin-bottom: 8px;
+    margin-right: $margin-section;
+    margin-bottom: $margin-section;
   }
 }
 .item {
@@ -14,6 +14,9 @@
   padding: 15px;
   border-radius: $border-radius-main;
   background-color: $color-gray;
+  p {
+    margin-left: $margin-section-text-left;
+  }
   img {
     display: block;
     margin-left: auto;

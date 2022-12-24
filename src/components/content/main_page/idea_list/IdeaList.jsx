@@ -27,7 +27,7 @@ const IdeaList = () => {
   }, [dispatch])
 
   return (
-    <div className={styles.main}>
+    <div className={styles.ideaList}>
       <div className={styles.title}>Идеи для интерьеров</div>
       <div className={styles.list}>
         {/* Arrow Left */}
