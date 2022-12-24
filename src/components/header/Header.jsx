@@ -1,6 +1,5 @@
 import React from "react"
 import { useSelector } from "react-redux"
-//import { useState } from "react"
 // styles
 import styles from "./css/Header.module.css"
 import textStyle from "./css/MenuText.module.css"
@@ -11,8 +10,8 @@ import heart from "./images/heart.png"
 // components
 import Menu from "../Menu"
 import OrgName from "../OrgName"
-import ButtonAction from "../ButtonAction"
 import SearchTab from "./SearchTab"
+import ButtonCatalog from "../ButtonCatalog"
 
 const Header = () => {
   const visible = useSelector((state) => {
@@ -20,20 +19,20 @@ const Header = () => {
   })
 
   const titles = [
-    <ButtonAction>Каталог</ButtonAction>,
-    <ButtonAction>Дизайнерам</ButtonAction>,
-    <ButtonAction>Шоу-рум</ButtonAction>,
-    <ButtonAction>Доставка и оплата</ButtonAction>,
+    <ButtonCatalog>Каталог</ButtonCatalog>,
+    <p>Дизайнерам</p>,
+    <p>Шоу-рум</p>,
+    <p>Доставка и оплата</p>,
   ]
 
   const images = [
     <SearchTab />,
-    <ButtonAction>
+    <div>
       <img src={heart} alt="" />
-    </ButtonAction>,
-    <ButtonAction>
+    </div>,
+    <div>
       <img src={bucket} alt="" />
-    </ButtonAction>,
+    </div>,
   ]
 
   return (

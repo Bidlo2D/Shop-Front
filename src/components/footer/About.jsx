@@ -12,6 +12,7 @@ import instagram from "./images/instagram.png"
 import facebook from "./images/facebook.png"
 import youtube from "./images/youtube.png"
 import telegram from "./images/telegram.png"
+import ButtonCatalog from "../ButtonCatalog"
 
 const About = () => {
   const images = [
@@ -27,7 +28,7 @@ const About = () => {
     <p>+7 925 560 10 10</p>,
   ]
   const middleBlock = [
-    <p>Каталог</p>,
+    <ButtonCatalog>Каталог</ButtonCatalog>,
     <p>Вся мебель</p>,
     <p>Диваны</p>,
     <p>Кресла</p>,

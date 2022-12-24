@@ -1,8 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useState, useEffect } from "react"
-// components
-import ButtonAction from "../ButtonAction"
 //action
 import { searchDeployment } from "../../redux/reducers/header/searchReducer"
 // images
@@ -26,11 +24,11 @@ const SearchTab = () => {
   }, [visible])
 
   return (
-    <ButtonAction>
+    <div>
       <form className={style} action="">
         <img
           onClick={() => {
-            dispatch(searchDeployment())
+            dispatch(searchDeployment(<div>Каталог</div>))
           }}
           src={search}
           alt=""
@@ -43,7 +41,7 @@ const SearchTab = () => {
           />
         ) : null}
       </form>
-    </ButtonAction>
+    </div>
   )
 }
 export default SearchTab

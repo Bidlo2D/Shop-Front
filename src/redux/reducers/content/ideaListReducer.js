@@ -1,7 +1,7 @@
-import imageTest1 from "../../../components/content/images/test/imageTest1.jpg"
-import imageTest2 from "../../../components/content/images/test/imageTest2.jpg"
-import imageTest3 from "../../../components/content/images/test/imageTest3.jpg"
-import imageTest4 from "../../../components/content/images/test/imageTest4.jpg"
+import imageTest1 from "./test/imageTest1.jpg"
+import imageTest2 from "./test/imageTest2.jpg"
+import imageTest3 from "./test/imageTest3.jpg"
+import imageTest4 from "./test/imageTest4.jpg"
 import { createAction, createReducer } from "@reduxjs/toolkit";
 const initialState = {
     ideas: [

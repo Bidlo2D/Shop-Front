@@ -2,11 +2,11 @@ import React from "react"
 // styles
 import styles from "./css/MainPage.module.css"
 // component
-import IdeaList from "../IdeaList"
-import Title from "../Title"
-import Description from "../Description"
-import Mailing from "../Mailing"
-import Sections from "../Sections"
+import IdeaList from "./idea_list/IdeaList"
+import Title from "./title/Title"
+import Description from "./description/Description"
+import Mailing from "./mailing/Mailing"
+import Sections from "./sections/Sections"
 
 const MainPage = () => {
   return (
