@@ -3,6 +3,7 @@ import React from "react"
 import SectionsCatalog from "./section_catalog/SectionsCatalog"
 // styles
 import styles from "./css/Catalog.module.css"
+import SearchBarCatalog from "./search_bar/SearchBarCatalog"
 
 const Catalog = () => {
   return (
@@ -11,6 +12,7 @@ const Catalog = () => {
         <p className={styles.directory}>Главная / Каталог</p>
         <p className={styles.chapter}>Каталог</p>
         <SectionsCatalog></SectionsCatalog>
+        <SearchBarCatalog></SearchBarCatalog>
       </div>
     </div>
   )

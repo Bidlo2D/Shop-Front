@@ -8,7 +8,7 @@ import search from "./images/search.png"
 // styles
 import styles from "./css/SearchTab.module.css"
 
-const SearchTab = () => {
+const SearchBarHeader = () => {
   const [style, setStyle] = useState(styles.formSearchOff)
   const dispatch = useDispatch()
   const visible = useSelector((state) => {
@@ -24,24 +24,22 @@ const SearchTab = () => {
   }, [visible])
 
   return (
-    <div>
-      <form className={style} action="">
-        <img
-          onClick={() => {
-            dispatch(searchDeployment(<div>Каталог</div>))
-          }}
-          src={search}
-          alt=""
+    <form className={style} action="">
+      <img
+        onClick={() => {
+          dispatch(searchDeployment())
+        }}
+        src={search}
+        alt=""
+      />
+      {!visible ? (
+        <input
+          className={styles.inputText}
+          type="search"
+          placeholder="Поиск по каталогу"
         />
-        {!visible ? (
-          <input
-            className={styles.inputText}
-            type="text"
-            placeholder="Поиск по каталогу"
-          />
-        ) : null}
-      </form>
-    </div>
+      ) : null}
+    </form>
   )
 }
-export default SearchTab
+export default SearchBarHeader

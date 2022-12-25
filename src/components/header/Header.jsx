@@ -10,7 +10,7 @@ import heart from "./images/heart.png"
 // components
 import Menu from "../Menu"
 import OrgName from "../OrgName"
-import SearchTab from "./SearchTab"
+import SearchBarHeader from "./SearchBarHeader"
 import ButtonCatalog from "../ButtonCatalog"
 
 const Header = () => {
@@ -26,7 +26,7 @@ const Header = () => {
   ]
 
   const images = [
-    <SearchTab />,
+    <SearchBarHeader />,
     <div>
       <img src={heart} alt="" />
     </div>,
