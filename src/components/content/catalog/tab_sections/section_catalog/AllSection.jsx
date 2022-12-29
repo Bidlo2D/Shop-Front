@@ -1,11 +1,24 @@
 import React from "react"
+import { useDispatch } from "react-redux"
+import { changeCatalog } from "../../../../../redux/reducers/content/catalog/catalogViewReducer"
+import Assortment from "../../assortment/Assortment"
 import styles from "./css/AllSection.module.css"
-//
-/* import imageAll from "./images/AllFurniture.jpg" */
 
 const AllSection = () => {
+  const dispatch = useDispatch()
   return (
-    <div className={styles.item}>
+    <div
+      onClick={() => {
+        dispatch(
+          changeCatalog({
+            dir: "Главная / Каталог / Вся мебель",
+            ctr: "Вся мебель",
+            tab: <Assortment></Assortment>,
+          })
+        )
+      }}
+      className={styles.item}
+    >
       <p>Вся мебель</p>
     </div>
   )

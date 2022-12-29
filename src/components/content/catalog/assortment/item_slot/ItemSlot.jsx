@@ -1,6 +1,6 @@
 import React from "react"
 // components
-import ItemSlot from "../item/Item"
+import Item from "../item/Item"
 // styles
 import styles from "./css/ItemSlot.module.css"
 

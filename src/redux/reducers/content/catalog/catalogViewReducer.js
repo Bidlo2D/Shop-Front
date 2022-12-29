@@ -1,8 +1,8 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 import TabSections from "./../../../../components/content/catalog/tab_sections/TabSections"
 const initialState = {
-    currentDirectory: "Главная / Каталог",
-    currentСategory: "Каталог",
+    currentDirectory: "",
+    currentСategory: "",
     currentTab: <TabSections></TabSections>
 }
 
@@ -13,6 +13,6 @@ export default createReducer(initialState, {
         const { dir, ctr, tab } = action.payload;
         state.currentDirectory = dir;
         state.currentСategory = ctr;
-        state.currentView = tab;
+        state.currentTab = tab;
     }
 })
