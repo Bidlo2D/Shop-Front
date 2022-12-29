@@ -6,7 +6,7 @@ import {
   ideasLoad,
   ideasMovingRight,
   ideasMovingLeft,
-} from "../../../../redux/reducers/content/ideaListReducer"
+} from "../../../../redux/reducers/content/main_page/ideaListReducer"
 // components
 import Idea from "./Idea"
 // styles

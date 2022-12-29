@@ -1,18 +1,24 @@
 import React from "react"
-// components
-import SectionsCatalog from "./section_catalog/SectionsCatalog"
+import { useSelector } from "react-redux"
 // styles
 import styles from "./css/Catalog.module.css"
-import SearchBarCatalog from "./search_bar/SearchBarCatalog"
 
 const Catalog = () => {
+  const title = useSelector((state) => {
+    return state.tabCatalog.currentDirectory
+  })
+  const ctr = useSelector((state) => {
+    return state.tabCatalog.currentСategory
+  })
+  const tab = useSelector((state) => {
+    return state.tabCatalog.currentTab
+  })
   return (
     <div className={styles.catalog}>
       <div className={styles.wrapper}>
-        <p className={styles.directory}>Главная / Каталог</p>
-        <p className={styles.chapter}>Каталог</p>
-        <SectionsCatalog></SectionsCatalog>
-        <SearchBarCatalog></SearchBarCatalog>
+        <p className={styles.directory}>{title}</p>
+        <p className={styles.category}>{ctr}</p>
+        {tab}
       </div>
     </div>
   )

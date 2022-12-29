@@ -1,5 +1,5 @@
-@import "../../../styles/vars.scss";
 @import "./../css/FontsContent.css";
+@import "../../../styles/vars.scss";
 .catalog {
   position: relative;
   height: max-content;
@@ -12,7 +12,7 @@
   font-family: $font-family-titles;
   margin-bottom: $margin-catalog-bottom;
 }
-.chapter {
+.category {
   font-size: 32px;
   font-family: $font-family-titles;
   margin-bottom: $margin-catalog-bottom;

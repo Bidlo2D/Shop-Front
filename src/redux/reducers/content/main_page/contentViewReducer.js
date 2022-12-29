@@ -1,5 +1,5 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import MainPage from "../../../components/content/main_page/MainPage"
+import MainPage from "./../../../../components/content/main_page/MainPage"
 const initialState = {
     currentView: <MainPage></MainPage>
 }

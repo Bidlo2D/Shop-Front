@@ -1,6 +1,6 @@
 import React from "react"
 // components
-import Sections from "../../main_page/sections/Sections"
+import Sections from "../../../main_page/sections/Sections"
 import AllSection from "./AllSection"
 // styles
 import styles from "./css/SectionsCatalog.module.css"

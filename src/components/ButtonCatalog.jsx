@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch } from "react-redux"
 // actions
-import { changeContent } from "./../redux/reducers/content/contentViewReducer"
+import { changeContent } from "./../redux/reducers/content/main_page/contentViewReducer"
 // components
 import Catalog from "./content/catalog/Catalog"
 

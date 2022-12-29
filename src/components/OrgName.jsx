@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { changeContent } from "../redux/reducers/content/contentViewReducer"
+import { changeContent } from "../redux/reducers/content/main_page/contentViewReducer"
 // components
 import MainPage from "./content/main_page/MainPage"
 // styles
