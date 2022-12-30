@@ -1,9 +1,9 @@
 @import "../../styles/vars.scss";
 .header {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 75px;
   background-color: $color-white;
+  width: 1000px;
 }

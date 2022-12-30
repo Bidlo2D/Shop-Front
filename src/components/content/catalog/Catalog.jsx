@@ -5,20 +5,16 @@ import styles from "./css/Catalog.module.css"
 
 const Catalog = () => {
   const title = useSelector((state) => {
-    return state.tabCatalog.currentDirectory
+    return state.catalog.currentDirectory
   })
   const ctr = useSelector((state) => {
-    return state.tabCatalog.currentСategory
-  })
-  const tab = useSelector((state) => {
-    return state.tabCatalog.currentTab
+    return state.catalog.currentСategory
   })
   return (
     <div className={styles.catalog}>
       <div className={styles.wrapper}>
         <p className={styles.directory}>{title}</p>
         <p className={styles.category}>{ctr}</p>
-        {tab}
       </div>
     </div>
   )

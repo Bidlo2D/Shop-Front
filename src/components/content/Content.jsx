@@ -1,9 +1,14 @@
-import { useSelector } from "react-redux"
+import { Route, Routes } from "react-router-dom"
+import MainPage from "./main_page/MainPage"
+import Catalog from "./catalog/Catalog"
+
 const Content = () => {
-  const tab = useSelector((state) => {
-    return state.tabContent.currentView
-  })
-  return tab
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/catalog" element={<Catalog />} />
+    </Routes>
+  )
 }
 
 export default Content

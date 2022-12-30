@@ -4,8 +4,6 @@ import { useDispatch } from "react-redux"
 import { changeCatalog } from "../../../../redux/reducers/content/catalog/catalogViewReducer"
 // styles
 import styles from "./css/Section.module.css"
-// components
-import Assortment from "../../catalog/assortment/Assortment"
 
 const Section = ({ data }) => {
   const dispatch = useDispatch()
@@ -19,7 +17,6 @@ const Section = ({ data }) => {
               changeCatalog({
                 dir: "Главная / Каталог / " + data.text[i],
                 ctr: "Дизайнерские " + data.text[i].toLowerCase(),
-                tab: <Assortment></Assortment>,
               })
             )
           }}
