@@ -8,7 +8,7 @@ const ButtonCatalog = (props) => {
   const dispatch = useDispatch()
   return (
     <Link
-      to="/catalog"
+      to="catalog"
       onClick={() => {
         dispatch(
           changeCatalog({

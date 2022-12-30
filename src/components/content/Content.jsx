@@ -6,7 +6,7 @@ const Content = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/catalog" element={<Catalog />} />
+      <Route path="catalog/*" element={<Catalog />} />
     </Routes>
   )
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
 // actions
 import { changeCatalog } from "../../../../redux/reducers/content/catalog/catalogViewReducer"
 // styles
@@ -10,8 +11,10 @@ const Section = ({ data }) => {
   const mapData = () => {
     const elements = []
     for (let i = 0; i < data.image.length; i++) {
+      let path = `${data.path[i]}`
       elements.push(
-        <div
+        <Link
+          to={path}
           onClick={() => {
             dispatch(
               changeCatalog({
@@ -25,7 +28,7 @@ const Section = ({ data }) => {
         >
           <p>{data.text[i]}</p>
           <img src={data.image[i]} alt="img" />
-        </div>
+        </Link>
       )
     }
     return elements

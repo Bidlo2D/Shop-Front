@@ -14,10 +14,12 @@ const Sections = () => {
   const firstSection = {
     image: [chair, sofa],
     text: ["Стулья", "Диваны"],
+    path: ["chairs", "sofas"],
   }
   const secondSection = {
     image: [dresser, armchair],
     text: ["Комоды", "Кресла"],
+    path: ["dressers", "armchairs"],
   }
 
   return (
