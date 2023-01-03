@@ -1,5 +1,8 @@
 import React from "react"
+import { useEffect } from "react"
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { viewBusy } from "../../../../../../../redux/reducers/content/catalog/assortment/filtresReducer"
 // styles
 import styles from "./css/ComboBox.module.css"
 // images
@@ -8,20 +11,30 @@ import unwrap from "./images/unwrap.png"
 const ComboBox = (props) => {
   const [style, setStyle] = useState(styles.closeModal)
   const [show, setShow] = useState(false)
+  const dispatch = useDispatch()
+  const busy = useSelector((state) => {
+    return state.filtres.busy
+  })
+  useEffect(() => {
+    if (busy && show) {
+      setStyle(styles.modal)
+    } else {
+      setStyle(styles.closeModal)
+      if (show) {
+        setShow(!show)
+      }
+    }
+  }, [busy])
   return (
     <div className={styles.comboBox}>
       <div
         onClick={() => {
-          if (show) {
-            setStyle(styles.closeModal)
-          } else {
-            setStyle(styles.modal)
-          }
-          setShow(!show)
+          dispatch(viewBusy()) // true
+          setShow(!show) // true
         }}
         className={styles.wrapper}
       >
-        <p>{props.text}</p>
+        <p className={styles.noselect}>{props.text}</p>
         <img src={unwrap} alt="No" />
       </div>
       <div className={style}>{props.children}</div>

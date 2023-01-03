@@ -28,7 +28,7 @@ const About = () => {
     <p>+7 925 560 10 10</p>,
   ]
   const middleBlock = [
-    <ButtonCatalog>Каталог</ButtonCatalog>,
+    <ButtonCatalog style={styles.button}>Каталог</ButtonCatalog>,
     <p>Вся мебель</p>,
     <p>Диваны</p>,
     <p>Кресла</p>,

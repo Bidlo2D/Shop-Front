@@ -1,3 +1,16 @@
+.modalCancel {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  //background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 2;
+}
+.modalCancelHidden {
+  visibility: hidden;
+}
 .filtres {
   display: flex;
   div {

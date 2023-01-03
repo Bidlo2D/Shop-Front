@@ -9,13 +9,14 @@ import chair from "./images/chair.png"
 import dresser from "./images/dresser.png"
 import sofa from "./images/sofa.png"
 
-/* TODO - rewrite this component */
 const Sections = () => {
+  // с API
   const firstSection = {
     image: [chair, sofa],
     text: ["Стулья", "Диваны"],
     path: ["chairs", "sofas"],
   }
+  // с API
   const secondSection = {
     image: [dresser, armchair],
     text: ["Комоды", "Кресла"],

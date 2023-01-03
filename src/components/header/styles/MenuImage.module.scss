@@ -2,12 +2,14 @@
 .menu {
   ul {
     display: flex;
-    text-align: center;
     width: max-content;
     li {
       margin-right: 15px;
       margin-top: auto;
       margin-bottom: auto;
+      &:hover {
+        color: $color-hover;
+      }
       img {
         width: $icon-width-height;
         height: $icon-width-height;
@@ -16,20 +18,3 @@
     }
   }
 }
-/* .action {
-  margin: auto 0;
-  ul {
-    display: flex;
-    //margin-right: $width-input-search;
-    text-align: center;
-    width: 115px;
-    li {
-      margin-right: 15px;
-      cursor: pointer;
-      img {
-        width: $icon-width-height;
-        height: $icon-width-height;
-      }
-    }
-  }
-} */

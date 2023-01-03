@@ -1,6 +1,38 @@
-.form {
-  input {
-    display: block;
-    margin-bottom: 5px;
+@import "../../../../../../../styles/vars.scss";
+input[type="checkbox"] {
+  display: none;
+  /* checked */
+  &:checked + label:before {
+    background-color: red;
+  }
+  /* disabled */
+  &:disabled + label:before {
+    background: #fff;
+  }
+}
+.option {
+  display: flex;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #000;
+  &:hover {
+    color: $color-hover;
+    border-bottom: 1px solid gray;
+  }
+  label {
+    display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
+    padding: 6px;
+    &:before {
+      content: " ";
+      color: #000;
+      display: inline-block;
+      margin-right: 15px;
+      width: 1em;
+      height: 1em;
+      background: #fff;
+      border: 1px solid #e3e3e3;
+      border-radius: 4px;
+    }
   }
 }

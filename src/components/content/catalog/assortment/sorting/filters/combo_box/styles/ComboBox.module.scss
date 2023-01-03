@@ -11,6 +11,9 @@
     height: 1em;
     margin-left: 5px;
   }
+  &:hover {
+    color: $color-hover;
+  }
 }
 .closeModal {
   visibility: hidden;
@@ -21,12 +24,13 @@
   visibility: visible;
   width: max-content;
   height: max-content;
-  padding: 8px;
+  padding: 12px;
   background: $color-gray;
+  border-radius: $border-radius-main;
   opacity: 0.95;
   position: absolute;
   left: 0;
-  top: 1em;
+  top: 2em;
   margin: auto;
   z-index: 10;
 }

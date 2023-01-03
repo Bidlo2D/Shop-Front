@@ -1,14 +1,18 @@
 import React from "react"
 // styles
 import styles from "./css/StyleBox.module.css"
-const StyleBox = (filtres) => {
+
+const StyleBox = (props) => {
   const mapData = () => {
     const elements = []
-    for (let i = 0; i < filtres.length; i++) {
+    for (let i = 0; i < props.filtres.length; i++) {
+      let id = `checkbox_${i}`
       elements.push(
-        <div>
-          <input type="checkbox" id="sd" name="" />
-          <label for="checkbox">{filtres[i]}</label>
+        <div className={styles.option} key={i}>
+          <input type="checkbox" id={id} />
+          <label htmlFor={id}>
+            <p className={styles.noselect}>{props.filtres[i]}</p>
+          </label>
         </div>
       )
     }
@@ -16,7 +20,11 @@ const StyleBox = (filtres) => {
   }
   return (
     <form className={styles.form}>
-      {filtres.length <= 0 || filtres.image === null ? <div></div> : mapData()}
+      {props.filtres.length <= 0 || props.filtres === null ? (
+        <div></div>
+      ) : (
+        mapData()
+      )}
     </form>
   )
 }

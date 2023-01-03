@@ -17,9 +17,8 @@ const ButtonCatalog = (props) => {
           })
         )
       }}
-      className={props.style}
     >
-      {props.children}
+      <p className={props.style}>{props.children}</p>
     </Link>
   )
 }
