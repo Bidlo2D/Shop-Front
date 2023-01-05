@@ -1,8 +1,8 @@
-import React from "react"
+import React, { memo } from "react"
 // styles
 import styles from "./css/StyleBox.module.css"
 
-const StyleBox = (props) => {
+const StyleBox = memo((props) => {
   const mapData = () => {
     const elements = []
     for (let i = 0; i < props.filtres.length; i++) {
@@ -27,6 +27,6 @@ const StyleBox = (props) => {
       )}
     </form>
   )
-}
+})
 
 export default StyleBox

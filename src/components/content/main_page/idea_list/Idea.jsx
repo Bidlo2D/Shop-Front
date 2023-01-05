@@ -1,6 +1,6 @@
-import React from "react"
+import React, { memo } from "react"
 import styles from "./css/Idea.module.css"
-const Idea = (props) => {
+const Idea = memo((props) => {
   return (
     <div className={styles.newProduct}>
       <div className={styles.wrapper}>
@@ -15,6 +15,6 @@ const Idea = (props) => {
       </div>
     </div>
   )
-}
+})
 
 export default Idea

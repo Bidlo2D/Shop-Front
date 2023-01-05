@@ -1,4 +1,5 @@
 import React from "react"
+//import { useMemo } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -19,12 +20,12 @@ const ComboBox = (props) => {
     if (busy && show) {
       setStyle(styles.modal)
     } else {
-      setStyle(styles.closeModal)
       if (show) {
         setShow(!show)
+        setStyle(styles.closeModal)
       }
     }
-  }, [busy])
+  }, [busy && show])
   return (
     <div className={styles.comboBox}>
       <div

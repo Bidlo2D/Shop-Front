@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 // actions
@@ -6,7 +6,7 @@ import { changeCatalog } from "../../../../redux/reducers/content/catalog/catalo
 // styles
 import styles from "./css/Section.module.css"
 
-const Section = ({ data }) => {
+const Section = memo(({ data }) => {
   const dispatch = useDispatch()
   const mapData = () => {
     const elements = []
@@ -38,6 +38,6 @@ const Section = ({ data }) => {
       {!data.image.length === data.text.length ? <div></div> : mapData()}
     </div>
   )
-}
+})
 
 export default Section
