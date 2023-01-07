@@ -11,7 +11,7 @@ const Section = memo(({ data }) => {
   const mapData = () => {
     const elements = []
     for (let i = 0; i < data.image.length; i++) {
-      let path = `${data.path[i]}`
+      let path = `/catalog/${data.path[i]}`
       elements.push(
         <Link
           to={path}

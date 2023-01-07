@@ -7,6 +7,7 @@ import styles from "./css/Filtres.module.css"
 
 const Filtres = () => {
   return (
+    /* TODO: Fixed update all comboBox! */
     <div className={styles.filtres}>
       <ModalWindow />
       <ComboBox text="Стиль">

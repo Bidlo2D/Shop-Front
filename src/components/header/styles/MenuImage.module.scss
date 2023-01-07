@@ -7,13 +7,13 @@
       margin-right: 15px;
       margin-top: auto;
       margin-bottom: auto;
-      &:hover {
-        color: $color-hover;
-      }
       img {
         width: $icon-width-height;
         height: $icon-width-height;
         cursor: pointer;
+        &:hover {
+          filter: brightness(135%);
+        }
       }
     }
   }

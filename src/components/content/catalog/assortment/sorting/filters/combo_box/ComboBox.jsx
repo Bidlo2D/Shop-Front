@@ -23,6 +23,8 @@ const ComboBox = (props) => {
       if (show) {
         setShow(!show)
         setStyle(styles.closeModal)
+      } else {
+        return
       }
     }
   }, [busy && show])

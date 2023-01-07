@@ -11,6 +11,9 @@
       img {
         width: $icon-width-height;
         height: $icon-width-height;
+        &:hover {
+          filter: brightness(135%);
+        }
       }
     }
   }

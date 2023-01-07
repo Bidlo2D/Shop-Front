@@ -3,11 +3,12 @@ input[type="checkbox"] {
   display: none;
   /* checked */
   &:checked + label:before {
-    background-color: red;
+    background: no-repeat url(../images/jackdaw.png);
+    background-size: contain;
   }
   /* disabled */
   &:disabled + label:before {
-    background: #fff;
+    background: none;
   }
 }
 .option {
@@ -31,7 +32,7 @@ input[type="checkbox"] {
       width: 1em;
       height: 1em;
       background: #fff;
-      border: 1px solid #e3e3e3;
+      border: 1px solid #000; //#e3e3e3;
       border-radius: 4px;
     }
   }
