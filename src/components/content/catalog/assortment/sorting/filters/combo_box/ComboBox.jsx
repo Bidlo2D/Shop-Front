@@ -27,7 +27,7 @@ const ComboBox = (props) => {
         return
       }
     }
-  }, [busy && show])
+  }, [busy, show])
   return (
     <div className={styles.comboBox}>
       <div

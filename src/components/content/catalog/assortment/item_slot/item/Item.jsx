@@ -1,10 +1,13 @@
 import React from "react"
 import styles from "./css/Item.module.css"
 
-const Item = () => {
+const Item = (props) => {
   return (
     <div className={styles.item}>
-      <p>1</p>
+      <img src={props.image} alt="" />
+      <p>{props.title}</p>
+      <p>{props.title}</p>
+      <p>{props.price}</p>
     </div>
   )
 }
