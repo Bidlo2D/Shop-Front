@@ -1,0 +1,24 @@
+.prices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapperPrices {
+  border-bottom: 1px solid #000;
+}
+
+.spanPrice {
+  margin-right: 8px;
+}
+
+.inputPrice {
+  background: transparent;
+  font-size: 15px;
+  width: 35px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

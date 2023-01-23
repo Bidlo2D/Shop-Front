@@ -1,9 +1,10 @@
-import React, { memo } from "react"
+import React, { useState } from "react"
 import styles from "./css/PriceBox.module.css"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { changeValueMin } from "../../../../../../../redux/reducers/content/catalog/assortment/filtresReducer"
 import { changeValueMax } from "./../../../../../../../redux/reducers/content/catalog/assortment/filtresReducer"
+import PricesInput from "./input_number/PricesInput"
 
 const PriceBox = () => {
   const dispatch = useDispatch()
@@ -13,63 +14,42 @@ const PriceBox = () => {
   const min = useSelector((state) => {
     return state.filtres.min
   })
-  const valueMin = useSelector((state) => {
-    return state.filtres.valueMin
+  const currentMin = useSelector((state) => {
+    return state.filtres.currentMin
   })
-  const valueMax = useSelector((state) => {
-    return state.filtres.valueMax
+  const currentMax = useSelector((state) => {
+    return state.filtres.currentMax
   })
   return (
     <form>
       <p className={styles.price}>Цена (руб.)</p>
       <div className={styles.slide}>
-        <input
-          onInput={(event) => {
-            dispatch(changeValueMin(event.target.value))
-          }}
-          type="range"
-          min={min}
-          max={max / 2}
-          value={valueMin}
-          step="1"
-          id="lower"
-        />
-        <input
-          onInput={(event) => {
-            dispatch(changeValueMax(event.target.value))
-          }}
-          type="range"
-          min={max / 2}
-          max={max}
-          value={valueMax}
-          step="1"
-          id="upper"
-        />
-      </div>
-      <div className={styles.prices}>
-        <div className={styles.wrapperPrices}>
-          <span className={styles.spanPrice}>от </span>
+        <div className={styles.highlight}>
           <input
-            onChange={(event) => {
-              dispatch(changeValueMin(event.target.value))
+            onInput={(event) => {
+              dispatch(changeValueMin(Number(event.target.value)))
             }}
-            className={styles.inputPrice}
-            type="number"
-            value={valueMin}
+            type="range"
+            min={min}
+            max={max}
+            value={currentMin}
+            step="1"
+            id="lower"
           />
-        </div>
-        <div className={styles.wrapperPrices}>
-          <span className={styles.spanPrice}>до </span>
           <input
-            onChange={(event) => {
-              dispatch(changeValueMax(event.target.value))
+            onInput={(event) => {
+              dispatch(changeValueMax(Number(event.target.value)))
             }}
-            className={styles.inputPrice}
-            type="number"
-            value={valueMax}
+            type="range"
+            min={min}
+            max={max}
+            value={currentMax}
+            step="1"
+            id="upper"
           />
         </div>
       </div>
+      <PricesInput />
     </form>
   )
 }

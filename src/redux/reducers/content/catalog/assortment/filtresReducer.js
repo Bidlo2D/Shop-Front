@@ -3,8 +3,8 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 const initialState = {
     max: 5000,
     min: 1000,
-    valueMin: 0,
-    valueMax: 0,
+    currentMin: 1000,
+    currentMax: 5000,
     busy: false
 }
 
@@ -19,11 +19,11 @@ export default createReducer(initialState, {
     },
     [changeValueMin]: function (state, action) {
         const value = action.payload;
-        state.valueMin = value;
+        if (value >= state.min && value <= state.currentMax) { state.currentMin = value; }
     },
     [changeValueMax]: function (state, action) {
         const value = action.payload;
-        state.valueMax = value;
+        if (value <= state.max && value >= state.currentMin) { state.currentMax = value; }
     },
     [loadMaxMin]: function (state, action) {
         /* TODO: API */

@@ -1,3 +1,4 @@
+@import "../../../../../../../styles/vars.scss";
 .price {
   margin-bottom: 8px;
 }
@@ -28,25 +29,33 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .slide {
+  position: relative;
+  display: flex;
+  width: 250px;
+  height: 28px;
   margin-bottom: 8px;
+  background: linear-gradient(grey, grey) no-repeat center;
+  background-size: 100% 2px;
 }
-
-input[type="number"] {
-  -moz-appearance: textfield;
+.highlight {
+  margin: auto auto;
+  width: 100%;
+  height: 2px;
+  background: $color-hover no-repeat center;
 }
 
 input[type="range"] {
+  position: absolute;
+  left: 0;
+  top: 0;
   box-sizing: border-box;
   appearance: none;
-  width: 150px;
-  margin: 0;
-  padding: 0 2px;
+  width: 250px;
   overflow: hidden;
   border: 0;
   border-radius: 1px;
   outline: none;
-  background: linear-gradient(grey, grey) no-repeat center;
-  background-size: 100% 2px;
+  background: transparent;
   pointer-events: none;
 
   &:active,
