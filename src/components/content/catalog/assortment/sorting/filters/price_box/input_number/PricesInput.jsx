@@ -29,7 +29,7 @@ const PricesInput = () => {
           onChange={(event) => {
             const value = Number(event.target.value)
             console.log(value)
-            if (value == 0) {
+            if (value === 0) {
               setValueMin("")
             } else {
               setValueMin(value)
@@ -50,7 +50,7 @@ const PricesInput = () => {
           onChange={(event) => {
             const value = Number(event.target.value)
             console.log(value)
-            if (value == 0) {
+            if (value === 0) {
               setValueMax("")
             } else {
               setValueMax(value)

@@ -1,10 +1,11 @@
 // components
 import ComboBox from "./combo_box/ComboBox"
-import StyleBox from "./style_box/StyleBox"
+import ListBox from "./style_box/ListBox"
 import PriceBox from "./price_box/PriceBox"
 import ModalWindow from "./modal_window/ModalWindow"
 // styles
 import styles from "./css/Filtres.module.css"
+import Color from "./color/Color"
 
 const Filtres = () => {
   return (
@@ -12,15 +13,33 @@ const Filtres = () => {
     <div className={styles.filtres}>
       <ModalWindow />
       <ComboBox text="Стиль">
-        <StyleBox
+        <ListBox
           filtres={["Античный", "Византийский", "Романский"]} // с API
-        ></StyleBox>
+        ></ListBox>
       </ComboBox>
       <ComboBox text="Цена">
         <PriceBox />
       </ComboBox>
-      <ComboBox text="Материал"></ComboBox>
-      <ComboBox text="Цвет"></ComboBox>
+      <ComboBox text="Материал">
+        <ListBox
+          filtres={[
+            "Искусственная кожа",
+            "Натуральная кожа",
+            "Ткань",
+            "Экокожа",
+          ]} // с API
+        ></ListBox>
+      </ComboBox>
+      <ComboBox text="Цвет">
+        <ListBox
+          filtres={[
+            <Color color="black">Черный</Color>,
+            <Color color="red">Красный</Color>,
+            <Color color="blue">Голубой</Color>,
+            <Color color="green">Зеленый</Color>,
+          ]} // с API
+        ></ListBox>
+      </ComboBox>
     </div>
   )
 }

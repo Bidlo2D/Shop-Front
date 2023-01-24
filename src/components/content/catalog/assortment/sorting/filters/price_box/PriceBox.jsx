@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from "./css/PriceBox.module.css"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
@@ -21,12 +21,13 @@ const PriceBox = () => {
     return state.filtres.currentMax
   })
   return (
-    <form>
+    <div>
       <p className={styles.price}>Цена (руб.)</p>
       <div className={styles.slide}>
         <div className={styles.highlight}>
           <input
             onInput={(event) => {
+              console.log(event.target.value)
               dispatch(changeValueMin(Number(event.target.value)))
             }}
             type="range"
@@ -50,7 +51,7 @@ const PriceBox = () => {
         </div>
       </div>
       <PricesInput />
-    </form>
+    </div>
   )
 }
 

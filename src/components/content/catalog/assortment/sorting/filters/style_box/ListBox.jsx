@@ -1,32 +1,32 @@
 import React, { memo } from "react"
 // styles
-import styles from "./css/StyleBox.module.css"
+import styles from "./css/ListBox.module.css"
 
-const StyleBox = memo((props) => {
+const ListBox = memo((props) => {
   const mapData = () => {
     const elements = []
     for (let i = 0; i < props.filtres.length; i++) {
-      let id = `checkbox_${i}`
+      let id = `checkbox_${props.filtres[i]}_${i}`
       elements.push(
-        <div className={styles.option} key={i}>
+        <li className={styles.option} key={i}>
           <input type="checkbox" id={id} />
           <label htmlFor={id}>
             <p className={styles.noselect}>{props.filtres[i]}</p>
           </label>
-        </div>
+        </li>
       )
     }
     return elements
   }
   return (
-    <form className={styles.form}>
+    <ul>
       {props.filtres.length <= 0 || props.filtres === null ? (
         <div></div>
       ) : (
         mapData()
       )}
-    </form>
+    </ul>
   )
 })
 
-export default StyleBox
+export default ListBox

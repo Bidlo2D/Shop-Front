@@ -29,7 +29,7 @@ const ComboBox = (props) => {
     }
   }, [busy, show])
   return (
-    <div className={styles.comboBox}>
+    <form className={styles.comboBox}>
       <div
         onClick={() => {
           dispatch(viewBusy()) // true
@@ -41,7 +41,7 @@ const ComboBox = (props) => {
         <img src={unwrap} alt="No" />
       </div>
       <div className={style}>{props.children}</div>
-    </div>
+    </form>
   )
 }
 
