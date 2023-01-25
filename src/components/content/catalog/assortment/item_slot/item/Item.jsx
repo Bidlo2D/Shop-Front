@@ -5,9 +5,13 @@ const Item = (props) => {
   return (
     <div className={styles.item}>
       <img src={props.image} alt="" />
-      <p>{props.title}</p>
-      <p>{props.title}</p>
-      <p>{props.price}</p>
+      <div className={styles.textBlock}>
+        <p className={styles.title}>
+          {props.category} {props.name}
+        </p>
+        <p className={styles.description}>{props.description}</p>
+        <p className={styles.price}>{props.price} Р</p>
+      </div>
     </div>
   )
 }

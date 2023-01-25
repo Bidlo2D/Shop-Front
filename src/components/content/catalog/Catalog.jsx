@@ -8,17 +8,17 @@ import TabSection from "./tab_sections/TabSections"
 import Assortment from "./assortment/Assortment"
 
 const Catalog = () => {
-  const title = useSelector((state) => {
+  const directory = useSelector((state) => {
     return state.catalog.currentDirectory
   })
-  const ctr = useSelector((state) => {
+  const category = useSelector((state) => {
     return state.catalog.currentСategory
   })
   return (
     <div className={styles.catalog}>
       <div className={styles.wrapper}>
-        <p className={styles.directory}>{title}</p>
-        <p className={styles.category}>{ctr}</p>
+        <p className={styles.directory}>{directory}</p>
+        <p className={styles.category}>{category}</p>
         <Routes>
           <Route path="/*" element={<TabSection />} />
           <Route path="all" element={<Assortment />} />

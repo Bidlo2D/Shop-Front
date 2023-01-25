@@ -1,21 +1,19 @@
 import React from "react"
-// styles
-import styles from "./css/SearchBarCatalog.module.css"
 // images
 import search from "./images/search.png"
 
-const SearchBarCatalog = () => {
+const SearchBarCatalog = (props) => {
   return (
-    <form className={styles.searchBar} action="">
-      <div className={styles.wrapper}>
-        <img className={styles.imageSearch} src={search} alt="No"></img>
+    <form className={props.styles.searchBar} action="">
+      <div className={props.styles.wrapper}>
+        <img className={props.styles.imageSearch} src={search} alt="No"></img>
         <input
-          className={styles.inputText}
+          className={props.styles.inputText}
           type="search"
           placeholder="Поиск по каталогу"
         />
       </div>
-      <div className={styles.buttonSearch}>Найти</div>
+      {props.children}
     </form>
   )
 }

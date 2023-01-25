@@ -1,1 +1,1 @@
-.item{height:50px;width:80px;background-color:bisque}
+@import"../../../../css/FontsContent.css";.item{cursor:pointer;display:flex;flex-wrap:wrap;height:450px;width:260px;text-align:center}.item img{height:260px;margin:auto auto}.textBlock{margin-top:20px}.textBlock p{width:100%;margin-bottom:15px}.title{font-size:large;font-family:"Circe-Bold"}.description{font-size:16px;font-family:"Circe-Light"}.price{font-size:large;font-family:"Circe-Bold"}

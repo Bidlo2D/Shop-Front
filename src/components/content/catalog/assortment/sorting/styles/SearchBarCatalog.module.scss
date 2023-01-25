@@ -1,0 +1,25 @@
+@import "../../../../../styles/vars.scss";
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  //height: max-content;
+}
+.wrapper {
+  display: flex;
+  height: 35px;
+  padding: 5px;
+  background: $color-gray;
+  border-radius: $border-radius-main;
+}
+.inputText {
+  margin: auto 0;
+  width: 200px;
+  margin-left: 15px;
+  background: transparent;
+}
+.imageSearch {
+  margin: auto auto;
+  width: 2em;
+  height: 2em;
+}
