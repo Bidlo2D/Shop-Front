@@ -1,13 +1,14 @@
 @import "../../../../../../../styles/vars.scss";
 .comboBox {
+  display: flex;
   position: relative;
   font-size: 18px;
   margin-right: 25px;
-  margin-bottom: $margin-catalog-bottom;
 }
 .wrapper {
   display: flex;
   cursor: pointer;
+  margin: auto 0;
   img {
     height: 1em;
     margin-left: 5px;

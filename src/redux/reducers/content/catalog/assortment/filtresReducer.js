@@ -5,7 +5,13 @@ const initialState = {
     min: 1000,
     currentMin: 1000,
     currentMax: 5000,
+    group: "Все",
     filtres: {
+        colors: [{ name: "Черный", color: "#000" }, { name: "Белый", color: "#fff" }],
+        styles: ["Античный", "Византийский", "Романский"],
+        materials: ["Искусственная кожа", "Натуральная кожа", "Ткань", "Экокожа"]
+    },
+    currentfiltres: {
         colors: [],
         styles: [],
         materials: []
@@ -33,9 +39,9 @@ export default createReducer(initialState, {
     },
     [addFiltres]: function (state, action) {
         const { styles, materials, colors } = action.payload;
-        state.filtres.styles = styles;
-        state.filtres.colors = colors;
-        state.filtres.materials = materials;
+        state.currentfiltres.styles = styles;
+        state.currentfiltres.colors = colors;
+        state.currentfiltres.materials = materials;
     },
     [loadInfo]: function (state, action) {
         /* TODO: API */

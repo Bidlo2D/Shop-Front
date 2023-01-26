@@ -7,17 +7,7 @@ import { changeCatalog } from "../redux/reducers/content/catalog/catalogViewRedu
 const ButtonCatalog = (props) => {
   const dispatch = useDispatch()
   return (
-    <Link
-      to="catalog"
-      onClick={() => {
-        dispatch(
-          changeCatalog({
-            dir: "Главная / Каталог",
-            ctr: "Каталог",
-          })
-        )
-      }}
-    >
+    <Link to="catalog">
       <p className={props.style}>{props.children}</p>
     </Link>
   )

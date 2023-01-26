@@ -2,7 +2,7 @@ import React from "react"
 
 const Color = (props) => {
   return (
-    <span style={{ display: "flex" }}>
+    <div style={{ display: "flex" }}>
       <div
         style={{
           height: "1em",
@@ -12,7 +12,7 @@ const Color = (props) => {
         }}
       />
       {props.children}
-    </span>
+    </div>
   )
 }
 

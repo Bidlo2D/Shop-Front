@@ -1,19 +1,27 @@
 import React from "react"
-import { useSelector } from "react-redux"
-import { Route, Routes } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { Route, Routes, useHref } from "react-router-dom"
+import { useEffect } from "react"
 // styles
 import styles from "./css/Catalog.module.css"
 // components
 import TabSection from "./tab_sections/TabSections"
 import Assortment from "./assortment/Assortment"
+// actions
+import { changeCatalog } from "./../../../redux/reducers/content/catalog/catalogViewReducer"
 
 const Catalog = () => {
+  const dispatch = useDispatch()
   const directory = useSelector((state) => {
     return state.catalog.currentDirectory
   })
   const category = useSelector((state) => {
     return state.catalog.currentСategory
   })
+  const href = useHref()
+  useEffect(() => {
+    dispatch(changeCatalog(href))
+  }, [href])
   return (
     <div className={styles.catalog}>
       <div className={styles.wrapper}>

@@ -11,7 +11,7 @@ const ListBox = memo((props) => {
         <li className={styles.option} key={i}>
           <input type="checkbox" id={id} />
           <label htmlFor={id}>
-            <p className={styles.noselect}>{props.filtres[i]}</p>
+            <div className={styles.noselect}>{props.filtres[i]}</div>
           </label>
         </li>
       )
@@ -21,7 +21,7 @@ const ListBox = memo((props) => {
   return (
     <ul>
       {props.filtres.length <= 0 || props.filtres === null ? (
-        <div></div>
+        <li></li>
       ) : (
         mapData()
       )}

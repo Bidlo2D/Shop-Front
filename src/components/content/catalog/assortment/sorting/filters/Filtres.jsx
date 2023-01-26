@@ -1,6 +1,6 @@
 // components
 import ComboBox from "./combo_box/ComboBox"
-import ListBox from "./style_box/ListBox"
+import ListBox from "./list_box/ListBox"
 import PriceBox from "./price_box/PriceBox"
 import ModalWindow from "./modal_window/ModalWindow"
 // styles

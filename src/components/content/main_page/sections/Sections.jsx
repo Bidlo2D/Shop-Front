@@ -10,13 +10,12 @@ import dresser from "./images/dresser.png"
 import sofa from "./images/sofa.png"
 
 const Sections = () => {
-  // с API
   const firstSection = {
     image: [chair, sofa],
     text: ["Стулья", "Диваны"],
     path: ["chairs", "sofas"],
   }
-  // с API
+
   const secondSection = {
     image: [dresser, armchair],
     text: ["Комоды", "Кресла"],
