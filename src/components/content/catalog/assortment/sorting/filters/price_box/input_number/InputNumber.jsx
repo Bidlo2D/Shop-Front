@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   changeValueMax,
   changeValueMin,
-} from "./../../../../../../../../redux/reducers/content/catalog/assortment/filtresReducer"
+} from "./../../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 import { useEffect } from "react"
 
-const PricesInput = () => {
+const InputNumber = (props) => {
   const dispatch = useDispatch()
   const currentMin = useSelector((state) => {
-    return state.filtres.currentMin
+    return state.filter.loadfilter.filters[props.index].params.currentMin
   })
   const currentMax = useSelector((state) => {
-    return state.filtres.currentMax
+    return state.filter.loadfilter.filters[props.index].params.currentMax
   })
   const [valueMin, setValueMin] = useState(currentMin)
   const [valueMax, setValueMax] = useState(currentMax)
@@ -36,7 +36,12 @@ const PricesInput = () => {
             }
           }}
           onBlur={(event) => {
-            dispatch(changeValueMin(Number(event.target.value)))
+            dispatch(
+              changeValueMin({
+                value: Number(event.target.value),
+                index: props.index,
+              })
+            )
             setValueMin(currentMin)
           }}
           className={styles.inputPrice}
@@ -57,7 +62,12 @@ const PricesInput = () => {
             }
           }}
           onBlur={(event) => {
-            dispatch(changeValueMax(Number(event.target.value)))
+            dispatch(
+              changeValueMax({
+                value: Number(event.target.value),
+                index: props.index,
+              })
+            )
             setValueMax(currentMax)
           }}
           className={styles.inputPrice}
@@ -69,4 +79,4 @@ const PricesInput = () => {
   )
 }
 
-export default PricesInput
+export default InputNumber

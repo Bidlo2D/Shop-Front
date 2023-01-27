@@ -1,16 +1,4 @@
 @import "../../../../../../../styles/vars.scss";
-input[type="checkbox"] {
-  display: none;
-  /* checked */
-  &:checked + label:before {
-    background: no-repeat url(../images/jackdaw.png);
-    background-size: contain;
-  }
-  /* disabled */
-  &:disabled + label:before {
-    background: none;
-  }
-}
 .option {
   display: flex;
   margin-bottom: 12px;
@@ -36,4 +24,25 @@ input[type="checkbox"] {
       border-radius: 4px;
     }
   }
+}
+
+input[type="checkbox"] {
+  display: none;
+  /* checked */
+  &:checked + label:before {
+    background: no-repeat url(../images/jackdaw.png);
+    background-size: contain;
+  }
+  /* disabled */
+  &:disabled + label:before {
+    background: none;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

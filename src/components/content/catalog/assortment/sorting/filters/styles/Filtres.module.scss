@@ -1,3 +1,7 @@
+.filtres {
+  display: flex;
+}
+
 .modalCancel {
   visibility: visible;
   position: absolute;
@@ -10,9 +14,16 @@
 .modalCancelHidden {
   visibility: hidden;
 }
-.filtres {
+
+.color {
   display: flex;
-  /*   div {
-    margin-right: 10px;
-  } */
+  &:before {
+    content: "";
+    display: block;
+    height: 1em;
+    width: 1em;
+    border-radius: 4px;
+    background: red;
+    margin-right: 15px;
+  }
 }

@@ -3,13 +3,13 @@ import React from "react"
 import styles from "./css/Sorting.module.css"
 import stylesSearch from "./css/SearchBarCatalog.module.css"
 // components
-import Filtres from "./filters/Filtres"
+import Filters from "./filters/Filters"
 import SearchBarCatalog from "./../../search_bar/SearchBarCatalog"
 
 const Sorting = () => {
   return (
     <div className={styles.sorting}>
-      <Filtres />
+      <Filters />
       <SearchBarCatalog styles={stylesSearch} />
     </div>
   )

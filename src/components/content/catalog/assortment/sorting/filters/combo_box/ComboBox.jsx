@@ -3,7 +3,7 @@ import React from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { viewBusy } from "../../../../../../../redux/reducers/content/catalog/assortment/filtresReducer"
+import { viewBusy } from "../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // styles
 import styles from "./css/ComboBox.module.css"
 // images
@@ -14,7 +14,7 @@ const ComboBox = (props) => {
   const [show, setShow] = useState(false)
   const dispatch = useDispatch()
   const busy = useSelector((state) => {
-    return state.filtres.busy
+    return state.filter.busy
   })
   useEffect(() => {
     if (busy && show) {

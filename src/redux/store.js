@@ -4,12 +4,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import searchReducer from "./reducers/header/searchReducer";
 import ideaListReducer from "./reducers/content/main_page/ideaListReducer";
 import catalogViewReducer from "./reducers/content/catalog/catalogViewReducer";
-import filtresReducer from "./reducers/content/catalog/assortment/filtresReducer";
+import filtersReducer from "./reducers/content/catalog/assortment/filtersReducer";
 
 const rootReducer = combineReducers({
     search: searchReducer,
     catalog: catalogViewReducer,
-    filtres: filtresReducer,
+    filter: filtersReducer,
     ideas: ideaListReducer
 });
 
