@@ -1,13 +1,16 @@
+import { useSelector } from "react-redux"
+import { groupFilter } from "./../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // components
 import ComboBox from "./combo_box/ComboBox"
 import ParamList from "./list_box/ParamList"
 import PriceBox from "./price_box/PriceBox"
 import ModalWindow from "./modal_window/ModalWindow"
 import ParamFilter from "./param_filter/ParamFilter"
+import SortingBy from "./sorting_by/SortingBy"
+import SearchBarCatalog from "./../../search_bar/SearchBarCatalog"
 // styles
 import styles from "./css/Filtres.module.css"
-import { useSelector } from "react-redux"
-import { groupFilter } from "./../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import stylesSearch from "./css/SearchBarCatalog.module.css"
 
 const Filters = () => {
   const filter = useSelector((state) => {
@@ -34,15 +37,23 @@ const Filters = () => {
     }
   }
   return (
-    <div className={styles.filtres}>
-      <ModalWindow />
-      {filter.filters.map((f, indexF) => (
-        <ComboBox key={indexF} text={f.text}>
-          <ParamList key={indexF} id={f.id}>
-            {renderFilter(f, indexF)}
-          </ParamList>
+    <div className={styles.filters}>
+      <div className={styles.checkAndRange}>
+        <ModalWindow />
+        {filter.filters.map((f, indexF) => (
+          <ComboBox key={indexF} text={f.text}>
+            <ParamList key={indexF} id={f.id}>
+              {renderFilter(f, indexF)}
+            </ParamList>
+          </ComboBox>
+        ))}
+      </div>
+      <div className={styles.sortingByAndSearch}>
+        <SearchBarCatalog styles={stylesSearch} />
+        <ComboBox>
+          <SortingBy />
         </ComboBox>
-      ))}
+      </div>
     </div>
   )
 }

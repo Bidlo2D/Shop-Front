@@ -1,15 +1,14 @@
-import React from "react"
-//import { useMemo } from "react"
+import React, { memo } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { viewBusy } from "../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // styles
 import styles from "./css/ComboBox.module.css"
 // images
 import unwrap from "./images/unwrap.png"
 
-const ComboBox = (props) => {
+const ComboBox = memo((props) => {
   const [style, setStyle] = useState(styles.closeModal)
   const [show, setShow] = useState(false)
   const dispatch = useDispatch()
@@ -43,6 +42,6 @@ const ComboBox = (props) => {
       <div className={style}>{props.children}</div>
     </form>
   )
-}
+})
 
 export default ComboBox

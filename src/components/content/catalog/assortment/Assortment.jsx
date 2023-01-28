@@ -1,13 +1,13 @@
 import React from "react"
 // components
 import ItemSlot from "./item_slot/ItemSlot"
-import Sorting from "./sorting/Sorting"
+import Filters from "./filters/Filters"
 
 const Assortment = () => {
   return (
     <div>
-      <Sorting></Sorting>
-      <ItemSlot></ItemSlot>
+      <Filters />
+      <ItemSlot />
     </div>
   )
 }

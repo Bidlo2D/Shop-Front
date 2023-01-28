@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   rangeChangeMax,
   rangeChangeMin,
-} from "./../../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+} from "./../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 import { useEffect } from "react"
 
 const InputNumber = (props) => {

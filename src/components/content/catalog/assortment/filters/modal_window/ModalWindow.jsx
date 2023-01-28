@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { viewBusy } from "../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // styles
 import styles from "./css/ModalWindow.module.css"
 

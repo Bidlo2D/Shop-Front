@@ -2,7 +2,7 @@ import React, { memo } from "react"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import styles from "./css/ParamFilter.module.css"
-import { paramChangeCheck } from "./../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import { paramChangeCheck } from "./../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 
 const ParamFilter = memo((props) => {
   const dispatch = useDispatch()

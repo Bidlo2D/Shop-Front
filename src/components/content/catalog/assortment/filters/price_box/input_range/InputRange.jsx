@@ -7,7 +7,7 @@ import styles from "./css/InputRange.module.css"
 import {
   rangeChangeMax,
   rangeChangeMin,
-} from "./../../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+} from "./../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 
 const InputRange = (props) => {
   const dispatch = useDispatch()
