@@ -1,21 +1,30 @@
 import React, { memo } from "react"
-//import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import styles from "./css/ParamFilter.module.css"
+import { paramChangeCheck } from "./../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 
 const ParamFilter = memo((props) => {
-  //const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const isColor = (color) => {
     const TESTER = document.createElement("div")
     TESTER.style.color = color
     return TESTER.style.color ? true : false
   }
-  const id = `${props.children}_${props.idf}${props.id}`
+  const id = `${props.children}_${props.indexF}${props.indexP}`
+  const checked = useSelector((state) => {
+    return state.filter.currentfilter.filters[props.indexF].params[props.indexP]
+      .check
+  })
   return (
     <li className={styles.option}>
       <input
         onChange={() => {
-          console.log("Change!")
+          dispatch(
+            paramChangeCheck({ indexF: props.indexF, indexP: props.indexP })
+          )
         }}
+        checked={checked}
         type="checkbox"
         id={id}
       />

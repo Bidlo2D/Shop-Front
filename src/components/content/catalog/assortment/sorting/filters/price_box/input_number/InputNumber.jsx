@@ -2,18 +2,18 @@ import React, { useState } from "react"
 import styles from "./css/PricesInput.module.css"
 import { useDispatch, useSelector } from "react-redux"
 import {
-  changeValueMax,
-  changeValueMin,
+  rangeChangeMax,
+  rangeChangeMin,
 } from "./../../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 import { useEffect } from "react"
 
 const InputNumber = (props) => {
   const dispatch = useDispatch()
   const currentMin = useSelector((state) => {
-    return state.filter.loadfilter.filters[props.index].params.currentMin
+    return state.filter.currentfilter.filters[props.index].params.currentMin
   })
   const currentMax = useSelector((state) => {
-    return state.filter.loadfilter.filters[props.index].params.currentMax
+    return state.filter.currentfilter.filters[props.index].params.currentMax
   })
   const [valueMin, setValueMin] = useState(currentMin)
   const [valueMax, setValueMax] = useState(currentMax)
@@ -37,7 +37,7 @@ const InputNumber = (props) => {
           }}
           onBlur={(event) => {
             dispatch(
-              changeValueMin({
+              rangeChangeMin({
                 value: Number(event.target.value),
                 index: props.index,
               })
@@ -63,7 +63,7 @@ const InputNumber = (props) => {
           }}
           onBlur={(event) => {
             dispatch(
-              changeValueMax({
+              rangeChangeMax({
                 value: Number(event.target.value),
                 index: props.index,
               })

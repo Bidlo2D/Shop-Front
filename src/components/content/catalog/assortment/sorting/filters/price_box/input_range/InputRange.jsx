@@ -5,23 +5,23 @@ import { useSelector } from "react-redux"
 import styles from "./css/InputRange.module.css"
 // actions
 import {
-  changeValueMax,
-  changeValueMin,
+  rangeChangeMax,
+  rangeChangeMin,
 } from "./../../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 
 const InputRange = (props) => {
   const dispatch = useDispatch()
   const max = useSelector((state) => {
-    return state.filter.loadfilter.filters[props.index].params.max
+    return state.filter.currentfilter.filters[props.index].params.max
   })
   const min = useSelector((state) => {
-    return state.filter.loadfilter.filters[props.index].params.min
+    return state.filter.currentfilter.filters[props.index].params.min
   })
   const currentMin = useSelector((state) => {
-    return state.filter.loadfilter.filters[props.index].params.currentMin
+    return state.filter.currentfilter.filters[props.index].params.currentMin
   })
   const currentMax = useSelector((state) => {
-    return state.filter.loadfilter.filters[props.index].params.currentMax
+    return state.filter.currentfilter.filters[props.index].params.currentMax
   })
   return (
     <div className={styles.slide}>
@@ -29,7 +29,7 @@ const InputRange = (props) => {
       <input
         onInput={(event) => {
           dispatch(
-            changeValueMin({
+            rangeChangeMin({
               value: Number(event.target.value),
               index: props.index,
             })
@@ -45,7 +45,7 @@ const InputRange = (props) => {
       <input
         onInput={(event) => {
           dispatch(
-            changeValueMax({
+            rangeChangeMax({
               value: Number(event.target.value),
               index: props.index,
             })

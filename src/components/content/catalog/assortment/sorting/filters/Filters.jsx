@@ -11,14 +11,19 @@ import { groupFilter } from "./../../../../../../redux/reducers/content/catalog/
 
 const Filters = () => {
   const filter = useSelector((state) => {
-    return state.filter.loadfilter
+    return state.filter.currentfilter
   })
 
   const renderFilter = (filter, indexF) => {
     switch (filter.group) {
-      case groupFilter.LIST:
+      case groupFilter.CHECKLIST:
         return filter.params.map((p, indexP) => (
-          <ParamFilter color={p.color} key={indexP} idf={filter.id} id={p.id}>
+          <ParamFilter
+            color={p.color}
+            key={indexP}
+            indexF={indexF}
+            indexP={indexP}
+          >
             {p.name}
           </ParamFilter>
         ))
