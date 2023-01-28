@@ -6,7 +6,8 @@ const initialState = {
             { id: 0, group: groupFilter.LIST, text: "Цвет", params: [{ id: 0, name: "Черный", color: "#000" }, { id: 1, name: "Белый", color: "#fff" }] },
             { id: 1, group: groupFilter.LIST, text: "Стиль", params: [{ id: 0, name: "Античный" }, { id: 1, name: "Византийский" }, { id: 2, name: "Романский" }] },
             { id: 2, group: groupFilter.RANGE, text: "Цена", params: { max: 5000, min: 1000, currentMin: 1000, currentMax: 5000 } },
-            { id: 3, group: groupFilter.LIST, text: "Материал", params: [{ id: 0, name: "Искусственная кожа" }, { id: 1, name: "Натуральная кожа" }, { id: 2, name: "Ткань" }, { id: 3, name: "Экокожа" }] }]
+            { id: 3, group: groupFilter.LIST, text: "Материал", params: [{ id: 0, name: "Искусственная кожа" }, { id: 1, name: "Натуральная кожа" }, { id: 2, name: "Ткань" }, { id: 3, name: "Экокожа" }] }
+        ]
     },
     currentfilter: {
         filters: []

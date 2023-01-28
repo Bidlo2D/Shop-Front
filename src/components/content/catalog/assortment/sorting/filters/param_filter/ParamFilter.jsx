@@ -1,10 +1,15 @@
-import React from "react"
-import { useDispatch } from "react-redux"
+import React, { memo } from "react"
+//import { useDispatch } from "react-redux"
 import styles from "./css/ParamFilter.module.css"
 
-const ParamFilter = (props) => {
-  const dispatch = useDispatch()
-  const id = `${props.children}_${props.id}`
+const ParamFilter = memo((props) => {
+  //const dispatch = useDispatch()
+  const isColor = (color) => {
+    const TESTER = document.createElement("div")
+    TESTER.style.color = color
+    return TESTER.style.color ? true : false
+  }
+  const id = `${props.children}_${props.idf}${props.id}`
   return (
     <li className={styles.option}>
       <input
@@ -15,7 +20,7 @@ const ParamFilter = (props) => {
         id={id}
       />
       <label htmlFor={id}>
-        {props.color == undefined ? (
+        {props.color === undefined || !isColor(props.color) ? (
           <div></div>
         ) : (
           <div
@@ -32,6 +37,6 @@ const ParamFilter = (props) => {
       </label>
     </li>
   )
-}
+})
 
 export default ParamFilter
