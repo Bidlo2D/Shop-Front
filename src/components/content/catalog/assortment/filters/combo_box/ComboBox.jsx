@@ -3,13 +3,11 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
-// styles
-import styles from "./css/ComboBox.module.css"
 // images
 import unwrap from "./images/unwrap.png"
 
 const ComboBox = memo((props) => {
-  const [style, setStyle] = useState(styles.closeModal)
+  const [style, setStyle] = useState(props.styles.closeModal)
   const [show, setShow] = useState(false)
   const dispatch = useDispatch()
   const busy = useSelector((state) => {
@@ -17,26 +15,26 @@ const ComboBox = memo((props) => {
   })
   useEffect(() => {
     if (busy && show) {
-      setStyle(styles.modal)
+      setStyle(props.styles.modal)
     } else {
       if (show) {
         setShow(!show)
-        setStyle(styles.closeModal)
+        setStyle(props.styles.closeModal)
       } else {
         return
       }
     }
-  }, [busy, show])
+  }, [busy, show, props])
   return (
-    <form className={styles.comboBox}>
+    <form className={props.styles.comboBox}>
       <div
         onClick={() => {
-          dispatch(viewBusy()) // true
-          setShow(!show) // true
+          dispatch(viewBusy())
+          setShow(!show)
         }}
-        className={styles.wrapper}
+        className={props.styles.wrapper}
       >
-        <p className={styles.noselect}>{props.text}</p>
+        <p className={props.styles.title}>{props.title}</p>
         <img src={unwrap} alt="No" />
       </div>
       <div className={style}>{props.children}</div>

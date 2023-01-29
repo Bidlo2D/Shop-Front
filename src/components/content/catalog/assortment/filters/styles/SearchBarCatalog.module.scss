@@ -1,13 +1,12 @@
-@import "../../../../../../styles/vars.scss";
+@import "../../../../../styles/vars.scss";
 
 .searchBar {
   display: flex;
   justify-content: center;
-  //height: max-content;
 }
 .wrapper {
   display: flex;
-  height: 35px;
+  height: $height-filters-button;
   padding: 5px;
   background: $color-gray;
   border-radius: $border-radius-main;

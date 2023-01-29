@@ -1,1 +1,1 @@
-.filters{display:flex;justify-content:space-between}.checkAndRange{display:flex}.sortingByAndSearch{display:flex}.modalCancel{visibility:visible;position:absolute;top:0;left:0;height:100vh;width:100%;z-index:2}.modalCancelHidden{visibility:hidden}
+.filters{display:flex;justify-content:space-between}.checkAndRange{display:flex}.checkAndRange form>:first-child{margin-right:15px}.sortingByAndSearch{display:flex}.sortingByAndSearch form>:last-child{margin-right:15px}

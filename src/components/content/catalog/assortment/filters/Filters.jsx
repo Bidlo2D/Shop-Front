@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux"
-import { groupFilter } from "./../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import {
+  groupFilter,
+  groupSort,
+} from "./../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // components
 import ComboBox from "./combo_box/ComboBox"
 import ParamList from "./list_box/ParamList"
@@ -11,10 +14,16 @@ import SearchBarCatalog from "./../../search_bar/SearchBarCatalog"
 // styles
 import styles from "./css/Filtres.module.css"
 import stylesSearch from "./css/SearchBarCatalog.module.css"
+import stylesRangeCheck from "./css/BoxRangeAndCheck.module.css"
+import stylesSortingBy from "./css/BoxSortingBy.module.css"
 
 const Filters = () => {
   const filter = useSelector((state) => {
     return state.filter.currentfilter
+  })
+
+  const currentSortingBy = useSelector((state) => {
+    return state.filter.currentSortingBy
   })
 
   const renderFilter = (filter, indexF) => {
@@ -36,12 +45,27 @@ const Filters = () => {
         return <div>???</div>
     }
   }
+
+  const getPropertes = () => {
+    let mass = []
+    let k = 0
+    for (var grouping in groupSort) {
+      mass.push(
+        <SortingBy grouping={grouping} key={k}>
+          {groupSort[grouping]}
+        </SortingBy>
+      )
+      k++
+    }
+    return mass
+  }
+
   return (
     <div className={styles.filters}>
       <div className={styles.checkAndRange}>
         <CancelWindow />
         {filter.filters.map((f, indexF) => (
-          <ComboBox key={indexF} text={f.text}>
+          <ComboBox styles={stylesRangeCheck} key={indexF} title={f.title}>
             <ParamList key={indexF} id={f.id}>
               {renderFilter(f, indexF)}
             </ParamList>
@@ -50,8 +74,11 @@ const Filters = () => {
       </div>
       <div className={styles.sortingByAndSearch}>
         <SearchBarCatalog styles={stylesSearch} />
-        <ComboBox>
-          <SortingBy />
+        <ComboBox
+          styles={stylesSortingBy}
+          title={`Порядок: ${currentSortingBy}`}
+        >
+          <ParamList>{getPropertes()}</ParamList>
         </ComboBox>
       </div>
     </div>

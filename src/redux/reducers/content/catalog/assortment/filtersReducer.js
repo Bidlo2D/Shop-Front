@@ -1,14 +1,18 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
+
 export const groupFilter = { RANGE: "range", CHECKLIST: "list" }
+export const groupSort = { PRICEHIGH: "по цене (Дороже)", PRICELOW: "по цене (Дешевле)", POPULAR: "по популяности" }
+
 const initialState = {
     currentfilter: {
         filters: [
-            { id: 0, group: groupFilter.CHECKLIST, text: "Цвет", params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },
-            { id: 1, group: groupFilter.CHECKLIST, text: "Стиль", params: [{ id: 0, check: false, name: "Античный" }, { id: 1, check: false, name: "Византийский" }, { id: 2, check: false, name: "Романский" }] },
-            { id: 2, group: groupFilter.RANGE, text: "Цена", params: { max: 5000, min: 1000, currentMin: 1000, currentMax: 5000 } },
-            { id: 3, group: groupFilter.CHECKLIST, text: "Материал", params: [{ id: 0, check: false, name: "Искусственная кожа" }, { id: 1, check: false, name: "Натуральная кожа" }, { id: 2, check: false, name: "Ткань" }, { id: 3, check: false, name: "Экокожа" }] }
+            { id: 0, group: groupFilter.CHECKLIST, title: "Цвет", params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },
+            { id: 1, group: groupFilter.CHECKLIST, title: "Стиль", params: [{ id: 0, check: false, name: "Античный" }, { id: 1, check: false, name: "Византийский" }, { id: 2, check: false, name: "Романский" }] },
+            { id: 2, group: groupFilter.RANGE, title: "Цена", params: { max: 5000, min: 1000, currentMin: 1000, currentMax: 5000 } },
+            { id: 3, group: groupFilter.CHECKLIST, title: "Материал", params: [{ id: 0, check: false, name: "Искусственная кожа" }, { id: 1, check: false, name: "Натуральная кожа" }, { id: 2, check: false, name: "Ткань" }, { id: 3, check: false, name: "Экокожа" }] }
         ]
     },
+    currentSortingBy: groupSort.PRICEHIGH,
     busy: false
 }
 
@@ -16,6 +20,7 @@ export const viewBusy = createAction("VIEW_BUSY")
 export const rangeChangeMin = createAction("RANGE_CHANGE_MIN")
 export const rangeChangeMax = createAction("RANGE_CHANGE_MAX")
 export const paramChangeCheck = createAction("PARAM_CHANGE_CHECK")
+export const changeSort = createAction("CHANGE_SORT")
 export const loadInfo = createAction("LOAD_INFO")
 
 export default createReducer(initialState, {
@@ -38,6 +43,10 @@ export default createReducer(initialState, {
         const { indexF, indexP } = action.payload;
         const param = state.currentfilter.filters[indexF].params[indexP];
         param.check = !param.check;
+    },
+    [changeSort]: function (state, action) {
+        const grouping = action.payload;
+        state.currentSortingBy = groupSort[grouping];
     },
     [loadInfo]: function (state, action) {
         /* TODO: API */

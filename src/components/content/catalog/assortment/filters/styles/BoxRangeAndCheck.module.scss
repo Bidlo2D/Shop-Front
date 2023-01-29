@@ -1,0 +1,39 @@
+@import "../../../../../styles/vars.scss";
+.comboBox {
+  display: flex;
+  position: relative;
+  height: $height-filters-button;
+  font-size: 18px;
+}
+.wrapper {
+  display: flex;
+  cursor: pointer;
+  margin: auto 0;
+  img {
+    height: 1em;
+    margin-left: 5px;
+  }
+  &:hover {
+    color: $color-hover;
+  }
+}
+.closeModal {
+  visibility: hidden;
+  display: none;
+}
+.modal {
+  display: block;
+  visibility: visible;
+  width: max-content;
+  height: max-content;
+  padding: 12px;
+  background: $color-gray;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.5);
+  border-radius: $border-radius-main;
+  opacity: 0.95;
+  position: absolute;
+  left: 0;
+  top: 2em;
+  margin: auto;
+  z-index: 10;
+}
