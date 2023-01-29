@@ -3,9 +3,9 @@ import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // styles
-import styles from "./css/ModalWindow.module.css"
+import styles from "./css/CancelWindow.module.css"
 
-const ModalWindow = () => {
+const CancelWindow = () => {
   const [style, setStyle] = useState(styles.modalCancelHidden)
   const dispatch = useDispatch()
   const busy = useSelector((state) => {
@@ -28,4 +28,4 @@ const ModalWindow = () => {
   )
 }
 
-export default ModalWindow
+export default CancelWindow

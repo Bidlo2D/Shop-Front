@@ -4,7 +4,7 @@ import { groupFilter } from "./../../../../../redux/reducers/content/catalog/ass
 import ComboBox from "./combo_box/ComboBox"
 import ParamList from "./list_box/ParamList"
 import PriceBox from "./price_box/PriceBox"
-import ModalWindow from "./modal_window/ModalWindow"
+import CancelWindow from "./cancel_window/CancelWindow"
 import ParamFilter from "./param_filter/ParamFilter"
 import SortingBy from "./sorting_by/SortingBy"
 import SearchBarCatalog from "./../../search_bar/SearchBarCatalog"
@@ -39,7 +39,7 @@ const Filters = () => {
   return (
     <div className={styles.filters}>
       <div className={styles.checkAndRange}>
-        <ModalWindow />
+        <CancelWindow />
         {filter.filters.map((f, indexF) => (
           <ComboBox key={indexF} text={f.text}>
             <ParamList key={indexF} id={f.id}>
