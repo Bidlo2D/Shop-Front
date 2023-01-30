@@ -13,7 +13,8 @@ const SortingBy = (props) => {
       }}
       className={styles.option}
     >
-      {props.children}
+      <img className={styles.image} src={props.img} alt="No" />
+      <p className={styles.text}>{props.children}</p>
     </div>
   )
 }

@@ -51,8 +51,8 @@ const Filters = () => {
     let k = 0
     for (var grouping in groupSort) {
       mass.push(
-        <SortingBy grouping={grouping} key={k}>
-          {groupSort[grouping]}
+        <SortingBy img={groupSort[grouping].img} grouping={grouping} key={k}>
+          {groupSort[grouping].name}
         </SortingBy>
       )
       k++
