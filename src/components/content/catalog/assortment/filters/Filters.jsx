@@ -5,7 +5,7 @@ import {
 } from "./../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
 // components
 import ComboBox from "./combo_box/ComboBox"
-import ParamList from "./list_box/ParamList"
+import ParamList from "./param_list/ParamList"
 import PriceBox from "./price_box/PriceBox"
 import CancelWindow from "./cancel_window/CancelWindow"
 import ParamFilter from "./param_filter/ParamFilter"
