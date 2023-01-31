@@ -2,12 +2,12 @@ import React from "react"
 import { useDispatch } from "react-redux"
 // styles
 import styles from "./css/SortingBy.module.css"
-import { changeSort } from "./../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import { changeSort } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const SortingBy = (props) => {
   const dispatch = useDispatch()
   return (
-    <div
+    <li
       onClick={() => {
         dispatch(changeSort(props.grouping))
       }}
@@ -15,7 +15,7 @@ const SortingBy = (props) => {
     >
       <img className={styles.image} src={props.img} alt="No" />
       <p className={styles.text}>{props.children}</p>
-    </div>
+    </li>
   )
 }
 

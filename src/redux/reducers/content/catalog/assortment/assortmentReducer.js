@@ -11,6 +11,7 @@ export const groupSort = {
 }
 
 const initialState = {
+    products: [],
     currentfilter: {
         filters: [
             { id: 0, group: groupFilter.CHECKLIST, title: "Цвет", params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },

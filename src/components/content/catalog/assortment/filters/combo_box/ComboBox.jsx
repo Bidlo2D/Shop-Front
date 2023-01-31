@@ -2,7 +2,7 @@ import React, { memo } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // images
 import unwrap from "./images/unwrap.png"
 
@@ -11,7 +11,7 @@ const ComboBox = memo((props) => {
   const [show, setShow] = useState(false)
   const dispatch = useDispatch()
   const busy = useSelector((state) => {
-    return state.filter.busy
+    return state.assortment.busy
   })
   useEffect(() => {
     if (busy && show) {

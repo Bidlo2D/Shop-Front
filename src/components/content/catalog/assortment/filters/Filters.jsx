@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import {
   groupFilter,
   groupSort,
-} from "./../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+} from "../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // components
 import ComboBox from "./combo_box/ComboBox"
 import ParamList from "./param_list/ParamList"
@@ -16,14 +16,15 @@ import styles from "./css/Filtres.module.css"
 import stylesSearch from "./css/SearchBarCatalog.module.css"
 import stylesRangeCheck from "./css/BoxRangeAndCheck.module.css"
 import stylesSortingBy from "./css/BoxSortingBy.module.css"
+import { memo } from "react"
 
-const Filters = () => {
+const Filters = memo(() => {
   const filter = useSelector((state) => {
-    return state.filter.currentfilter
+    return state.assortment.currentfilter
   })
 
   const currentSortingBy = useSelector((state) => {
-    return state.filter.currentSortingBy
+    return state.assortment.currentSortingBy
   })
 
   const renderFilter = (filter, indexF) => {
@@ -83,6 +84,6 @@ const Filters = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Filters

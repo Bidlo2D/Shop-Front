@@ -1,7 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Route, Routes, useHref } from "react-router-dom"
-import { useEffect } from "react"
 // styles
 import styles from "./css/Catalog.module.css"
 // components
@@ -21,7 +20,7 @@ const Catalog = () => {
   const href = useHref()
   useEffect(() => {
     dispatch(changeCatalog(href))
-  }, [href])
+  }, [href, dispatch])
   return (
     <div className={styles.catalog}>
       <div className={styles.wrapper}>

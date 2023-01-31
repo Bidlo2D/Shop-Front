@@ -2,7 +2,7 @@ import React, { memo } from "react"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import styles from "./css/ParamFilter.module.css"
-import { paramChangeCheck } from "./../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+import { paramChangeCheck } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const ParamFilter = memo((props) => {
   const dispatch = useDispatch()
@@ -13,8 +13,9 @@ const ParamFilter = memo((props) => {
   }
   const id = `${props.children}_${props.indexF}${props.indexP}`
   const checked = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.indexF].params[props.indexP]
-      .check
+    return state.assortment.currentfilter.filters[props.indexF].params[
+      props.indexP
+    ].check
   })
   return (
     <li className={styles.option}>

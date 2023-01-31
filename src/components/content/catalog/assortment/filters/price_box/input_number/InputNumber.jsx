@@ -4,16 +4,16 @@ import { useDispatch, useSelector } from "react-redux"
 import {
   rangeChangeMax,
   rangeChangeMin,
-} from "./../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+} from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 import { useEffect } from "react"
 
 const InputNumber = (props) => {
   const dispatch = useDispatch()
   const currentMin = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.index].params.currentMin
+    return state.assortment.currentfilter.filters[props.index].params.currentMin
   })
   const currentMax = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.index].params.currentMax
+    return state.assortment.currentfilter.filters[props.index].params.currentMax
   })
   const [valueMin, setValueMin] = useState(currentMin)
   const [valueMax, setValueMax] = useState(currentMax)
@@ -21,6 +21,8 @@ const InputNumber = (props) => {
     setValueMin(currentMin)
     setValueMax(currentMax)
   }, [currentMin, currentMax])
+
+  console.log("Render!")
   return (
     <div className={styles.prices}>
       <div className={styles.wrapperPrices}>

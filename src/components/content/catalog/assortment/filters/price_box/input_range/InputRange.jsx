@@ -7,21 +7,21 @@ import styles from "./css/InputRange.module.css"
 import {
   rangeChangeMax,
   rangeChangeMin,
-} from "./../../../../../../../redux/reducers/content/catalog/assortment/filtersReducer"
+} from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const InputRange = (props) => {
   const dispatch = useDispatch()
   const max = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.index].params.max
+    return state.assortment.currentfilter.filters[props.index].params.max
   })
   const min = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.index].params.min
+    return state.assortment.currentfilter.filters[props.index].params.min
   })
   const currentMin = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.index].params.currentMin
+    return state.assortment.currentfilter.filters[props.index].params.currentMin
   })
   const currentMax = useSelector((state) => {
-    return state.filter.currentfilter.filters[props.index].params.currentMax
+    return state.assortment.currentfilter.filters[props.index].params.currentMax
   })
   return (
     <div className={styles.slide}>
