@@ -22,7 +22,6 @@ const InputNumber = (props) => {
     setValueMax(currentMax)
   }, [currentMin, currentMax])
 
-  console.log("Render!")
   return (
     <div className={styles.prices}>
       <div className={styles.wrapperPrices}>
@@ -30,7 +29,6 @@ const InputNumber = (props) => {
         <input
           onChange={(event) => {
             const value = Number(event.target.value)
-            console.log(value)
             if (value === 0) {
               setValueMin("")
             } else {

@@ -1,11 +1,11 @@
-import React from "react"
+import React, { memo } from "react"
 // styles
 import styles from "./css/PriceBox.module.css"
 // components
 import InputNumber from "./input_number/InputNumber"
 import InputRange from "./input_range/InputRange"
 
-const PriceBox = (props) => {
+const PriceBox = memo(function (props) {
   return (
     <div>
       <p className={styles.price}>Цена (руб.)</p>
@@ -13,6 +13,6 @@ const PriceBox = (props) => {
       <InputNumber index={props.index} />
     </div>
   )
-}
+})
 
 export default PriceBox
