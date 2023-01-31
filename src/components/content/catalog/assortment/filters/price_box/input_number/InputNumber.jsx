@@ -29,6 +29,7 @@ const InputNumber = (props) => {
         <input
           onChange={(event) => {
             const value = Number(event.target.value)
+            console.log(value)
             if (value === 0) {
               setValueMin("")
             } else {

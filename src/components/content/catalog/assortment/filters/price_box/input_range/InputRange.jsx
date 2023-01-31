@@ -23,6 +23,7 @@ const InputRange = (props) => {
   const currentMax = useSelector((state) => {
     return state.assortment.currentfilter.filters[props.index].params.currentMax
   })
+
   return (
     <div className={styles.slide}>
       <div className={styles.highlight} />

@@ -5,7 +5,7 @@ import Filters from "./filters/Filters"
 
 const Assortment = () => {
   return (
-    <div>
+    <div className="assortment">
       <Filters />
       <ItemSlot />
     </div>
