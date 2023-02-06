@@ -4,10 +4,12 @@ import Catalog from "./catalog/Catalog"
 
 const Content = () => {
   return (
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="catalog/*" element={<Catalog />} />
-    </Routes>
+    <main>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="catalog/*" element={<Catalog />} />
+      </Routes>
+    </main>
   )
 }
 

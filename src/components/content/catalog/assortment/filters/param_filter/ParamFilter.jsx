@@ -1,10 +1,9 @@
-import React, { memo } from "react"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import styles from "./css/ParamFilter.module.css"
 import { paramChangeCheck } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
-const ParamFilter = memo((props) => {
+const ParamFilter = (props) => {
   const id = `${props.children}_${props.indexF}${props.indexP}`
   const dispatch = useDispatch()
   const isColor = (color) => {
@@ -12,10 +11,9 @@ const ParamFilter = memo((props) => {
     TESTER.style.color = color
     return TESTER.style.color ? true : false
   }
+
   const checked = useSelector((state) => {
-    return state.assortment.currentfilter.filters[props.indexF].params[
-      props.indexP
-    ].check
+    return state.assortment.filters[props.indexF].params[props.indexP].check
   })
 
   return (
@@ -48,6 +46,6 @@ const ParamFilter = memo((props) => {
       </label>
     </li>
   )
-})
+}
 
 export default ParamFilter

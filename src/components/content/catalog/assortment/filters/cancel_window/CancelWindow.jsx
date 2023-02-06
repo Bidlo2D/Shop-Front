@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import { changeView } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // styles
 import styles from "./css/CancelWindow.module.css"
 
@@ -9,7 +9,10 @@ const CancelWindow = () => {
   const [style, setStyle] = useState(styles.modalCancelHidden)
   const dispatch = useDispatch()
   const busy = useSelector((state) => {
-    return state.assortment.busy
+    return state.assortment.busyness.busy
+  })
+  const indexF = useSelector((state) => {
+    return state.assortment.busyness.indexF
   })
   useEffect(() => {
     if (busy) {
@@ -21,7 +24,7 @@ const CancelWindow = () => {
   return (
     <div
       onClick={() => {
-        dispatch(viewBusy())
+        dispatch(changeView(indexF))
       }}
       className={style}
     />

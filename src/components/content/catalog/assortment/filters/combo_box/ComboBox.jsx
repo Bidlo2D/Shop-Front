@@ -2,35 +2,30 @@ import React, { memo } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { viewBusy } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+//import { changeView } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // images
 import unwrap from "./images/unwrap.png"
+import { changeView } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const ComboBox = memo((props) => {
   const [style, setStyle] = useState(props.styles.closeModal)
-  const [show, setShow] = useState(false)
-  const dispatch = useDispatch()
-  const busy = useSelector((state) => {
-    return state.assortment.busy
+  const show = useSelector((state) => {
+    return state.assortment.filters[props.indexF].show
   })
+  const dispatch = useDispatch()
   useEffect(() => {
-    if (busy && show) {
+    if (show) {
       setStyle(props.styles.modal)
     } else {
-      if (show) {
-        setShow(!show)
-        setStyle(props.styles.closeModal)
-      } else {
-        return
-      }
+      setStyle(props.styles.closeModal)
     }
-  }, [busy, show, props])
+  }, [show, props.styles.modal, props.styles.closeModal])
+
   return (
     <form className={props.styles.comboBox}>
       <div
         onClick={() => {
-          dispatch(viewBusy())
-          setShow(!show)
+          dispatch(changeView(props.indexF))
         }}
         className={props.styles.wrapper}
       >
