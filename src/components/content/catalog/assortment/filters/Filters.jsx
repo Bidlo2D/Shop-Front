@@ -1,19 +1,21 @@
-import { memo } from "react"
 // components
-import CancelWindow from "./cancel_window/CancelWindow"
 import FiltersList from "./filters_list/FiltersList"
+import SearchBarCatalog from "./../../search_bar/SearchBarCatalog"
+import SortingBy from "./sorting_by/SortingBy"
 // styles
 import styles from "./css/Filtres.module.css"
-import SortList from "./sort_list/SortList"
+import stylesSearch from "./css/SearchBarCatalog.module.css"
 
-const Filters = memo(() => {
+const Filters = () => {
   return (
     <div className={styles.filters}>
-      <CancelWindow />
       <FiltersList />
-      <SortList />
+      <div className={styles.sortingByAndSearch}>
+        <SearchBarCatalog styles={stylesSearch} />
+        <SortingBy />
+      </div>
     </div>
   )
-})
+}
 
 export default Filters

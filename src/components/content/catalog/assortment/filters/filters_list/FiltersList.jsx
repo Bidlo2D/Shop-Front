@@ -9,6 +9,8 @@ import ParamFilter from "./../param_filter/ParamFilter"
 import ParamList from "./../param_list/ParamList"
 import PriceBox from "./../price_box/PriceBox"
 import ComboBox from "../combo_box/ComboBox"
+import CancelWindow from "../cancel_window/CancelWindow"
+// selectors
 import { selectAllFilter } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentSelector"
 
 const FiltersList = (props) => {
@@ -36,8 +38,9 @@ const FiltersList = (props) => {
 
   return (
     <div className={styles.filtersList}>
+      <CancelWindow />
       {filters.map((f, indexF) =>
-        f.group != groupFilter.SORT ? (
+        f.group !== groupFilter.SORT ? (
           <ComboBox
             styles={stylesRangeCheck}
             key={indexF}

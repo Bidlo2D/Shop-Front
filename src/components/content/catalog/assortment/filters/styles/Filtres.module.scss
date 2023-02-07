@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
 }
-.checkAndRange {
+
+.sortingByAndSearch {
   display: flex;
-  form > :first-child {
+  form > :last-child {
     margin-right: 15px;
   }
 }
