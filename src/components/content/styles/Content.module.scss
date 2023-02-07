@@ -1,0 +1,4 @@
+@import "../../styles/vars.scss";
+.content {
+  min-height: calc(100vh - $height-footer);
+}
