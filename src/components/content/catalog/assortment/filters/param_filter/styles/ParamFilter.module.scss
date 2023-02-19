@@ -1,4 +1,4 @@
-@import "../../../../../../../styles/vars.scss";
+@import "../../../../../../styles/vars.scss";
 .option {
   display: flex;
   margin-bottom: 12px;
@@ -30,7 +30,7 @@ input[type="checkbox"] {
   display: none;
   /* checked */
   &:checked + label:before {
-    background: no-repeat url(../images/jackdaw.png);
+    background: no-repeat url(../../../../../../../assets/img/jackdaw.png);
     background-size: contain;
   }
   /* disabled */

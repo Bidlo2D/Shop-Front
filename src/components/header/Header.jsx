@@ -5,8 +5,8 @@ import styles from "./css/Header.module.css"
 import textStyle from "./css/MenuText.module.css"
 import imageStyle from "./css/MenuImage.module.css"
 // images
-import bucket from "./images/bucketShop.png"
-import heart from "./images/heart.png"
+import bucket from "../../assets/img/bucketShop.png"
+import heart from "../../assets/img/heart.png"
 // components
 import Menu from "../Menu"
 import OrgName from "../OrgName"

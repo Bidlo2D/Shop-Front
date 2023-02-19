@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 //action
 import { searchDeployment } from "../../redux/reducers/header/searchReducer"
 // images
-import search from "./images/search.png"
+import search from "../../assets/img/search.png"
 // styles
 import styles from "./css/SearchTab.module.css"
 

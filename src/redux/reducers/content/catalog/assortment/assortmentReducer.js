@@ -1,7 +1,7 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import arrowUp from "./images/arrow-up.png"
-import arrowDown from "./images/arrow-down.png"
-import popular from "./images/popular.png"
+import arrowUp from "../../../../../assets/img/arrow-up.png"
+import arrowDown from "../../../../../assets/img/arrow-down.png"
+import popular from "../../../../../assets/img/popular.png"
 
 export const groupFilter = { RANGE: "range", CHECKLIST: "list", SORT: "sort" }
 export const groupSort = {

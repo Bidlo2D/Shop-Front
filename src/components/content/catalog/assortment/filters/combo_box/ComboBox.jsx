@@ -2,9 +2,7 @@ import React, { memo } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-//import { changeView } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
-// images
-import unwrap from "./images/unwrap.png"
+import unwrap from "../../../../../../assets/img/unwrap.png"
 import { changeView } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const ComboBox = memo((props) => {

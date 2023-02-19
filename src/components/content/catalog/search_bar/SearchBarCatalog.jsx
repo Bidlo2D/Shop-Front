@@ -1,6 +1,6 @@
 import React from "react"
 // images
-import search from "./images/search.png"
+import search from "../../../../assets/img/search.png"
 
 const SearchBarCatalog = (props) => {
   return (

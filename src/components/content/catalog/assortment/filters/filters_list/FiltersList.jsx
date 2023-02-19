@@ -16,7 +16,7 @@ import { selectAllFilter } from "./../../../../../../redux/reducers/content/cata
 const FiltersList = (props) => {
   const filters = useSelector(selectAllFilter)
 
-  const renderFilters = (filter, indexF) => {
+  const мountingItem = (filter, indexF) => {
     switch (filter.group) {
       case groupFilter.CHECKLIST:
         return filter.params.map((p, indexP) => (
@@ -32,7 +32,7 @@ const FiltersList = (props) => {
       case groupFilter.RANGE:
         return <PriceBox index={indexF} />
       default:
-        return <div>???</div>
+        return null
     }
   }
 
@@ -48,7 +48,7 @@ const FiltersList = (props) => {
             title={f.title}
           >
             <ParamList key={indexF} indexF={indexF}>
-              {renderFilters(f, indexF)}
+              {мountingItem(f, indexF)}
             </ParamList>
           </ComboBox>
         ) : null

@@ -8,10 +8,10 @@ import imageStyle from "./css/MenuImage.module.css"
 //import textStyle from "../css/MenuText.module.css"
 
 // images
-import instagram from "./images/instagram.png"
-import facebook from "./images/facebook.png"
-import youtube from "./images/youtube.png"
-import telegram from "./images/telegram.png"
+import instagram from "../../assets/img/instagram.png"
+import facebook from "../../assets/img/facebook.png"
+import youtube from "../../assets/img/youtube.png"
+import telegram from "../../assets/img/telegram.png"
 import ButtonCatalog from "../ButtonCatalog"
 
 const About = () => {

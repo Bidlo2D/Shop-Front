@@ -4,10 +4,10 @@ import Section from "./Section"
 // styles
 import styles from "./css/Sections.module.css"
 // images
-import armchair from "./images/armchair.png"
-import chair from "./images/chair.png"
-import dresser from "./images/dresser.png"
-import sofa from "./images/sofa.png"
+import armchair from "../../../../assets/img/armchair.png"
+import chair from "../../../../assets/img/chair.png"
+import dresser from "../../../../assets/img/dresser.png"
+import sofa from "../../../../assets/img/sofa.png"
 
 const Sections = () => {
   const firstSection = {
