@@ -12,6 +12,8 @@ export const groupSort = {
 
 const initialState = {
     products: [],
+    total: 0,
+    page: 0,
     filters: [
         { id: 0, show: false, group: groupFilter.CHECKLIST, title: "Цвет", params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },
         { id: 1, show: false, group: groupFilter.CHECKLIST, title: "Стиль", params: [{ id: 0, check: false, name: "Античный" }, { id: 1, check: false, name: "Византийский" }, { id: 2, check: false, name: "Романский" }] },
@@ -23,6 +25,7 @@ const initialState = {
 }
 
 export const changeView = createAction("CHANGE_VIEW")
+export const changePage = createAction("CHANGE_PAGE")
 export const rangeChangeMin = createAction("RANGE_CHANGE_MIN")
 export const rangeChangeMax = createAction("RANGE_CHANGE_MAX")
 export const paramChangeCheck = createAction("PARAM_CHANGE_CHECK")
@@ -58,6 +61,12 @@ export default createReducer(initialState, {
         state.filters[indexF].params.sort = groupSort[grouping];
     },
     [loadInfo]: function (state, action) {
-        /* TODO: API */
+        const pages = action.payload;
+        state.products = pages.data;
+        state.total = pages.total;
+    },
+    [changePage]: function (state, action) {
+        const page = action.payload;
+        state.page = page;
     }
 })
