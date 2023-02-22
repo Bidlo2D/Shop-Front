@@ -1,11 +1,9 @@
 import React from "react"
+import { localhost } from "../../../../../../../api/ip"
 
 const ImageAPI = (props) => {
   return (
-    <img
-      src={"http://localhost:8080/img/" + props.name}
-      className={props.style}
-    ></img>
+    <img src={`${localhost}/img/` + props.name} className={props.style}></img>
   )
 }
 
