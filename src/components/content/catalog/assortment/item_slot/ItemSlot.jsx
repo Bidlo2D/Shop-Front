@@ -5,20 +5,21 @@ import Item from "./item/Item"
 // styles
 import styles from "./css/ItemSlot.module.css"
 
-const ItemSlot = () => {
+const ItemSlot = (props) => {
   const items = useSelector((state) => {
     return state.assortment.products
   })
+
   return (
     <div className={styles.itemSlot}>
       {items.map((item, i) => (
         <Item
           key={i}
-          image=""
-          category="Диван"
-          name="Monti"
-          description="Четкий диван с тканивой обивкой. Доступен в разных цветах."
-          price="15 434"
+          image={item.image}
+          category={item.category}
+          name={item.name}
+          description={item.description}
+          price={item.price}
         />
       ))}
     </div>

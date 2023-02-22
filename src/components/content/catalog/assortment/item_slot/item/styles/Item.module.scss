@@ -1,17 +1,16 @@
 @import "../../../../css/FontsContent.css";
-$size-item: 260px;
+//$size-item: 260px;
 .item {
   cursor: pointer;
-  display: flex;
-  flex-wrap: wrap;
   height: 450px;
-  width: $size-item;
   text-align: center;
-  img {
-    height: $size-item;
-    margin: auto auto;
-  }
 }
+
+.image {
+  height: 260px;
+  margin: auto auto;
+}
+
 .textBlock {
   margin-top: 20px;
   p {

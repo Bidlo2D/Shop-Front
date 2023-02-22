@@ -1,9 +1,11 @@
 import React from "react"
 import styles from "./css/Item.module.css"
+import ImageAPI from "./image_api/ImageAPI"
 
 const Item = (props) => {
   return (
     <div className={styles.item}>
+      <ImageAPI style={styles.image} name={props.image} />
       <img src={props.image} alt="" />
       <div className={styles.textBlock}>
         <p className={styles.title}>

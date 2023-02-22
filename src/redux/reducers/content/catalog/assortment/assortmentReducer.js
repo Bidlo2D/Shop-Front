@@ -4,6 +4,7 @@ import arrowDown from "../../../../../assets/img/arrow-down.png"
 import popular from "../../../../../assets/img/popular.png"
 
 export const groupFilter = { RANGE: "range", CHECKLIST: "list", SORT: "sort" }
+
 export const groupSort = {
     PRICEHIGH: { img: arrowUp, name: "по цене (дороже)" },
     PRICELOW: { img: arrowDown, name: "по цене (дешевле)" },
@@ -14,6 +15,7 @@ const initialState = {
     products: [],
     total: 0,
     page: 0,
+    countPages: 2,
     filters: [
         { id: 0, show: false, group: groupFilter.CHECKLIST, title: "Цвет", params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },
         { id: 1, show: false, group: groupFilter.CHECKLIST, title: "Стиль", params: [{ id: 0, check: false, name: "Античный" }, { id: 1, check: false, name: "Византийский" }, { id: 2, check: false, name: "Романский" }] },
@@ -64,6 +66,7 @@ export default createReducer(initialState, {
         const pages = action.payload;
         state.products = pages.data;
         state.total = pages.total;
+        state.countPages = pages.countPages;
     },
     [changePage]: function (state, action) {
         const page = action.payload;

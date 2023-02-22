@@ -1,0 +1,12 @@
+@import "../../css/FontsContent.css";
+@import "../../../../styles/vars.scss";
+.directory {
+  font-size: 20px;
+  font-family: $font-family-titles;
+  margin-bottom: $margin-catalog-bottom;
+}
+.category {
+  font-size: 32px;
+  font-family: $font-family-titles;
+  margin-bottom: $margin-catalog-bottom;
+}

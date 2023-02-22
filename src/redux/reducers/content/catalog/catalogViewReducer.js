@@ -15,6 +15,10 @@ export default createReducer(initialState, {
                 state.currentDirectory = "Главная / Каталог";
                 state.currentСategory = "Каталог";
                 break;
+            case "/catalog/assortment":
+                state.currentDirectory = "Главная / Каталог";
+                state.currentСategory = "Каталог";
+                break;
             case "/catalog/all":
                 state.currentDirectory = "Главная / Каталог / Вся мебель";
                 state.currentСategory = "Вся мебель";
