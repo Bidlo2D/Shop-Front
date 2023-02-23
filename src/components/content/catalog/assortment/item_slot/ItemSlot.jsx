@@ -5,7 +5,7 @@ import Item from "./item/Item"
 // styles
 import styles from "./css/ItemSlot.module.css"
 
-const ItemSlot = (props) => {
+const ItemSlot = () => {
   const items = useSelector((state) => {
     return state.assortment.products
   })

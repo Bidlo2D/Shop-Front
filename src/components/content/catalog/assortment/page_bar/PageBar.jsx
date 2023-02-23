@@ -17,7 +17,11 @@ const PageBar = () => {
     }
     return mass
   }
-  return <div className={styles.pageBar}>{createPageElement()}</div>
+  return (
+    <div className={styles.pageBar}>
+      <div className={styles.wrapper}>{createPageElement()}</div>
+    </div>
+  )
 }
 
 export default PageBar

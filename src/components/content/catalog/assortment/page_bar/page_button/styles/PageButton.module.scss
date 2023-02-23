@@ -1,0 +1,21 @@
+@import "../../../../../../styles/vars.scss";
+.radius {
+  cursor: pointer;
+  display: flex;
+  :hover {
+    background-color: $color-blue;
+  }
+}
+.pageButton {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  margin: auto auto;
+  padding: 15px;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+.text {
+  font-size: 20px;
+  font-weight: bold;
+}

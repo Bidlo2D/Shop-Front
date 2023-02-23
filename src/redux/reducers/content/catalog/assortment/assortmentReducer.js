@@ -15,7 +15,7 @@ const initialState = {
     products: [],
     total: 0,
     page: 0,
-    countPages: 2,
+    countPages: 0,
     filters: [
         { id: 0, show: false, group: groupFilter.CHECKLIST, title: "Цвет", params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },
         { id: 1, show: false, group: groupFilter.CHECKLIST, title: "Стиль", params: [{ id: 0, check: false, name: "Античный" }, { id: 1, check: false, name: "Византийский" }, { id: 2, check: false, name: "Романский" }] },
