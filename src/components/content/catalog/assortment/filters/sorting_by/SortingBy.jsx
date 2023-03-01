@@ -5,7 +5,6 @@ import stylesSortingBy from "./css/BoxSortingBy.module.css"
 import { groupSort } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // components
 import ComboBox from "../combo_box/ComboBox"
-import ParamList from "../param_list/ParamList"
 import SortParam from "./sort_param/SortParam"
 import { useSelector } from "react-redux"
 import { groupFilter } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
@@ -19,7 +18,7 @@ const SortingBy = () => {
   })
 
   const currentGroup = useSelector((state) => {
-    return state.assortment.filters[indexF].params.sort.name
+    return state.assortment.filtersParams[indexF].params.sort.name
   })
 
   const getPropertes = () => {
@@ -30,23 +29,23 @@ const SortingBy = () => {
         <SortParam
           indexF={indexF}
           img={groupSort[grouping].img}
+          name={groupSort[grouping].name}
           grouping={grouping}
           key={k}
-        >
-          {groupSort[grouping].name}
-        </SortParam>
+        />
       )
       k++
     }
     return mass
   }
+
   return (
     <ComboBox
       indexF={indexF}
       styles={stylesSortingBy}
       title={`Порядок: ${currentGroup}`}
     >
-      <ParamList>{getPropertes()}</ParamList>
+      <ul> {getPropertes()} </ul>
     </ComboBox>
   )
 }

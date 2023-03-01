@@ -13,28 +13,8 @@ import CancelWindow from "../cancel_window/CancelWindow"
 // selectors
 import { selectAllFilter } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentSelector"
 
-const FiltersList = (props) => {
+const FiltersList = () => {
   const filters = useSelector(selectAllFilter)
-
-  const мountingItem = (filter, indexF) => {
-    switch (filter.group) {
-      case groupFilter.CHECKLIST:
-        return filter.params.map((p, indexP) => (
-          <ParamFilter
-            color={p.color}
-            key={indexP}
-            indexF={indexF}
-            indexP={indexP}
-          >
-            {p.name}
-          </ParamFilter>
-        ))
-      case groupFilter.RANGE:
-        return <PriceBox index={indexF} />
-      default:
-        return null
-    }
-  }
 
   return (
     <div className={styles.filtersList}>
@@ -47,9 +27,7 @@ const FiltersList = (props) => {
             indexF={indexF}
             title={f.title}
           >
-            <ParamList key={indexF} indexF={indexF}>
-              {мountingItem(f, indexF)}
-            </ParamList>
+            <ParamList key={indexF} indexF={indexF} />
           </ComboBox>
         ) : null
       )}

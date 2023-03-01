@@ -6,6 +6,7 @@ import { changeSort } from "../../../../../../../redux/reducers/content/catalog/
 
 const SortParam = (props) => {
   const dispatch = useDispatch()
+
   return (
     <li
       onClick={() => {
@@ -14,7 +15,7 @@ const SortParam = (props) => {
       className={styles.option}
     >
       <img className={styles.image} src={props.img} alt="No" />
-      <p className={styles.text}>{props.children}</p>
+      <p className={styles.text}>{props.name}</p>
     </li>
   )
 }

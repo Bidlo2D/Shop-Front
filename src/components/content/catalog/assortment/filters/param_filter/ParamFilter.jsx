@@ -13,7 +13,12 @@ const ParamFilter = (props) => {
   }
 
   const checked = useSelector((state) => {
-    return state.assortment.filters[props.indexF].params[props.indexP].check
+    return state.assortment.filtersParams[props.indexF].params[props.indexP]
+      .check
+  })
+
+  const color = useSelector((state) => {
+    return state.assortment.filtersParams[props.indexF].params.color
   })
 
   return (
@@ -29,14 +34,14 @@ const ParamFilter = (props) => {
         id={id}
       />
       <label htmlFor={id}>
-        {props.color === undefined || !isColor(props.color) ? (
+        {color === undefined || !isColor(color) ? (
           <div></div>
         ) : (
           <div
             style={{
               height: "1em",
               width: "1em",
-              backgroundColor: props.color,
+              backgroundColor: color,
               borderRadius: 4,
               marginRight: 15,
             }}
