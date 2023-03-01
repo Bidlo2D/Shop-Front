@@ -9,7 +9,7 @@ const ParamList = memo((props) => {
   const filter = useSelector((state) => {
     return state.assortment.filtersParams[props.indexF]
   })
-  console.log(filter)
+
   const мountingItem = () => {
     switch (filter.group) {
       case groupFilter.CHECKLIST:
