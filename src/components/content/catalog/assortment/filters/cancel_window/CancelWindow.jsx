@@ -15,8 +15,8 @@ const CancelWindow = () => {
   })
 
   return (
-    <div className="test">
-      {!busy ? null : (
+    <div className="сancelWindow">
+      {busy && (
         <div
           onClick={() => {
             dispatch(changeView(indexF))

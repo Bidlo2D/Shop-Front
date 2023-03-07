@@ -20,9 +20,7 @@ const ComboBox = memo((props) => {
         <p className={props.styles.title}>{props.title}</p>
         <img src={unwrap} alt="No" />
       </div>
-      {!show ? null : (
-        <div className={props.styles.modal}>{props.children}</div>
-      )}
+      {show && <div className={props.styles.modal}>{props.children}</div>}
     </form>
   )
 })
