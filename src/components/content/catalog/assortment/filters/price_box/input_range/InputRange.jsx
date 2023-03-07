@@ -10,6 +10,7 @@ import {
 } from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const InputRange = (props) => {
+  const step = 10
   const dispatch = useDispatch()
   const max = useSelector((state) => {
     return state.assortment.filtersParams[props.index].params.max
@@ -40,7 +41,7 @@ const InputRange = (props) => {
         min={min}
         max={max}
         value={currentMin}
-        step="1"
+        step={step}
         id="lower"
       />
       <input
@@ -56,7 +57,7 @@ const InputRange = (props) => {
         min={min}
         max={max}
         value={currentMax}
-        step="1"
+        step={step}
         id="upper"
       />
     </div>

@@ -11,6 +11,8 @@ export const groupSort = {
     POPULAR: { img: popular, name: "по популяности" }
 }
 
+const limitDistance = 33;
+
 const initialState = {
     products: [],
     total: 0,
@@ -26,7 +28,7 @@ const initialState = {
     filtersParams: [
         { id: 0, show: false, group: groupFilter.CHECKLIST, params: [{ id: 0, check: false, name: "Черный", color: "#000" }, { id: 1, check: false, name: "Белый", color: "#fff" }] },
         { id: 1, show: false, group: groupFilter.CHECKLIST, params: [{ id: 0, check: false, name: "Античный" }, { id: 1, check: false, name: "Византийский" }, { id: 2, check: false, name: "Романский" }] },
-        { id: 2, show: false, group: groupFilter.RANGE, params: { max: 5000, min: 1000, currentMin: 1000, currentMax: 5000 } },
+        { id: 2, show: false, group: groupFilter.RANGE, params: { max: 5000, min: 1000, currentMin: 1000, currentMax: 5000, step: 10 } },
         { id: 3, show: false, group: groupFilter.CHECKLIST, params: [{ id: 0, check: false, name: "Искусственная кожа" }, { id: 1, check: false, name: "Натуральная кожа" }, { id: 2, check: false, name: "Ткань" }, { id: 3, check: false, name: "Экокожа" }] },
         { id: 4, show: false, group: groupFilter.SORT, params: { sort: groupSort.PRICEHIGH } }
     ],
@@ -49,7 +51,7 @@ export default createReducer(initialState, {
         state.busyness.busy = !state.busyness.busy;
         state.busyness.indexF = indexF;
     },
-    [popupClose]: function (state, action) {
+    [popupClose]: function (state) {
         const indexF = state.busyness.indexF
         state.filtersParams[indexF].show = !state.filtersParams[indexF].show;
         state.busyness.busy = !state.busyness.busy;
@@ -58,13 +60,13 @@ export default createReducer(initialState, {
         const { value, index } = action.payload;
         const filter = state.filtersParams[index];
         if (value >= filter.params.min
-            && value <= filter.params.currentMax) { filter.params.currentMin = value; }
+            && value <= filter.params.currentMax - (limitDistance * filter.params.step)) { filter.params.currentMin = value; }
     },
     [rangeChangeMax]: function (state, action) {
         const { value, index } = action.payload;
         const filter = state.filtersParams[index];
         if (value <= filter.params.max
-            && value >= filter.params.currentMin) { filter.params.currentMax = value; }
+            && value >= filter.params.currentMin + (limitDistance * filter.params.step)) { filter.params.currentMax = value; }
     },
     [paramChangeCheck]: function (state, action) {
         const { indexF, indexP } = action.payload;
