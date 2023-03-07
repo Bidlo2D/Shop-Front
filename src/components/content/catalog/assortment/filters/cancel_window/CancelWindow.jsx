@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { changeView } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import { popupClose } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // styles
 import styles from "./css/CancelWindow.module.css"
 
@@ -10,16 +10,12 @@ const CancelWindow = () => {
     return state.assortment.busyness.busy
   })
 
-  const indexF = useSelector((state) => {
-    return state.assortment.busyness.indexF
-  })
-
   return (
     <div className="сancelWindow">
       {busy && (
         <div
           onClick={() => {
-            dispatch(changeView(indexF))
+            dispatch(popupClose())
           }}
           className={styles.modalCancel}
         />

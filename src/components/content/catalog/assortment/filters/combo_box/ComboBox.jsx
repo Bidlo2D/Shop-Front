@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import unwrap from "../../../../../../assets/img/unwrap.png"
-import { changeView } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import { popupOpen } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const ComboBox = memo((props) => {
   const show = useSelector((state) => {
@@ -13,7 +13,7 @@ const ComboBox = memo((props) => {
     <form className={props.styles.comboBox}>
       <div
         onClick={() => {
-          dispatch(changeView(props.indexF))
+          dispatch(popupOpen(props.indexF))
         }}
         className={props.styles.wrapper}
       >

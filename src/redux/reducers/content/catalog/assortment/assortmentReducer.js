@@ -33,7 +33,8 @@ const initialState = {
     busyness: { busy: false, indexF: 0 }
 }
 
-export const changeView = createAction("CHANGE_VIEW")
+export const popupOpen = createAction("POPUP_OPEN")
+export const popupClose = createAction("POPUP_CLOSE")
 export const changePage = createAction("CHANGE_PAGE")
 export const rangeChangeMin = createAction("RANGE_CHANGE_MIN")
 export const rangeChangeMax = createAction("RANGE_CHANGE_MAX")
@@ -42,11 +43,16 @@ export const changeSort = createAction("CHANGE_SORT")
 export const loadInfo = createAction("LOAD_INFO")
 
 export default createReducer(initialState, {
-    [changeView]: function (state, action) {
+    [popupOpen]: function (state, action) {
         const indexF = action.payload;
         state.filtersParams[indexF].show = !state.filtersParams[indexF].show;
         state.busyness.busy = !state.busyness.busy;
         state.busyness.indexF = indexF;
+    },
+    [popupClose]: function (state, action) {
+        const indexF = state.busyness.indexF
+        state.filtersParams[indexF].show = !state.filtersParams[indexF].show;
+        state.busyness.busy = !state.busyness.busy;
     },
     [rangeChangeMin]: function (state, action) {
         const { value, index } = action.payload;
