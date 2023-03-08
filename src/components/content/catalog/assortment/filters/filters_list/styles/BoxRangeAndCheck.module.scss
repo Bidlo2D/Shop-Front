@@ -5,6 +5,7 @@
   height: $height-filters-button;
   font-size: 18px;
 }
+
 .wrapper {
   display: flex;
   cursor: pointer;
@@ -17,10 +18,12 @@
     color: $color-hover;
   }
 }
+
 .closeModal {
   visibility: hidden;
   display: none;
 }
+
 .modal {
   display: block;
   visibility: visible;

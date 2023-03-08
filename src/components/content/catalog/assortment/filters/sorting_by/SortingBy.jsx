@@ -1,6 +1,6 @@
 import React from "react"
 // styles
-import stylesSortingBy from "./css/BoxSortingBy.module.css"
+import styles from "./css/BoxSortingBy.module.css"
 // types
 import { groupSort } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // components
@@ -42,10 +42,10 @@ const SortingBy = () => {
   return (
     <ComboBox
       indexF={indexF}
-      styles={stylesSortingBy}
+      styles={styles}
       title={`Порядок: ${currentGroup}`}
     >
-      <ul> {getPropertes()} </ul>
+      <ul className={styles.collection}> {getPropertes()} </ul>
     </ComboBox>
   )
 }

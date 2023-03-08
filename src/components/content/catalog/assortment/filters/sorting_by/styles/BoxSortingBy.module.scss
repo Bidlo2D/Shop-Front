@@ -1,4 +1,13 @@
 @import "./../../../../../../styles/vars.scss";
+.collection {
+  padding: 5px;
+  li {
+    margin-bottom: 12px;
+  }
+  :last-child {
+    margin-bottom: 0px;
+  }
+}
 
 .comboBox {
   display: flex;

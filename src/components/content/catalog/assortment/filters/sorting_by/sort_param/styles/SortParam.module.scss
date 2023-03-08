@@ -1,8 +1,7 @@
-@import "../../../../../../styles/vars.scss";
+@import "./../../../../../../../styles/vars.scss";
 .option {
   cursor: pointer;
   display: flex;
-  margin-bottom: 12px;
   border-bottom: 1px solid #000;
   padding: 6px;
   &:hover {
