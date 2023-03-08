@@ -10,8 +10,10 @@ import {
 } from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const InputRange = (props) => {
-  const step = 10
   const dispatch = useDispatch()
+  const step = useSelector((state) => {
+    return state.assortment.filtersParams[props.index].params.step
+  })
   const max = useSelector((state) => {
     return state.assortment.filtersParams[props.index].params.max
   })
