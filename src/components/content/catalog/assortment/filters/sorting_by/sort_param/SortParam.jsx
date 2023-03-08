@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 // styles
 import styles from "./css/SortParam.module.css"
 import { changeSort } from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import { popupOpenClose } from "./../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const SortParam = (props) => {
   const dispatch = useDispatch()
@@ -10,7 +11,8 @@ const SortParam = (props) => {
   return (
     <li
       onClick={() => {
-        dispatch(changeSort({ indexF: props.indexF, grouping: props.grouping }))
+        dispatch(changeSort({ indexS: props.indexS, grouping: props.grouping }))
+        dispatch(popupOpenClose(props.indexS))
       }}
       className={styles.option}
     >

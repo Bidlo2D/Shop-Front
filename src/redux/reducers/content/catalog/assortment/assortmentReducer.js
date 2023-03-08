@@ -35,8 +35,9 @@ const initialState = {
     busyness: { busy: false, indexF: 0 }
 }
 
-export const popupOpen = createAction("POPUP_OPEN")
-export const popupClose = createAction("POPUP_CLOSE")
+export const comboboxOpen = createAction("COMBOBOX_OPEN")
+export const comboboxClose = createAction("COMBOBOX_CLOSE")
+export const popupOpenClose = createAction("POPUP_OPEN_CLOSE")
 export const changePage = createAction("CHANGE_PAGE")
 export const rangeChangeMin = createAction("RANGE_CHANGE_MIN")
 export const rangeChangeMax = createAction("RANGE_CHANGE_MAX")
@@ -45,16 +46,20 @@ export const changeSort = createAction("CHANGE_SORT")
 export const loadInfo = createAction("LOAD_INFO")
 
 export default createReducer(initialState, {
-    [popupOpen]: function (state, action) {
+    [comboboxOpen]: function (state, action) {
         const indexF = action.payload;
         state.filtersParams[indexF].show = !state.filtersParams[indexF].show;
         state.busyness.busy = !state.busyness.busy;
         state.busyness.indexF = indexF;
     },
-    [popupClose]: function (state) {
+    [comboboxClose]: function (state) {
         const indexF = state.busyness.indexF
         state.filtersParams[indexF].show = !state.filtersParams[indexF].show;
         state.busyness.busy = !state.busyness.busy;
+    },
+    [popupOpenClose]: function (state, action) {
+        const indexS = action.payload;
+        state.filtersParams[indexS].show = !state.filtersParams[indexS].show;
     },
     [rangeChangeMin]: function (state, action) {
         const { value, index } = action.payload;
@@ -74,8 +79,8 @@ export default createReducer(initialState, {
         param.check = !param.check;
     },
     [changeSort]: function (state, action) {
-        const { indexF, grouping } = action.payload;
-        state.filtersParams[indexF].params.sort = groupSort[grouping];
+        const { indexS, grouping } = action.payload;
+        state.filtersParams[indexS].params.sort = groupSort[grouping];
     },
     [loadInfo]: function (state, action) {
         const pages = action.payload;

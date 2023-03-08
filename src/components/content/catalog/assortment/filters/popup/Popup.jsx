@@ -1,22 +1,22 @@
 import React, { memo } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 // images
 import unwrap from "../../../../../../assets/img/unwrap.png"
 import wrap from "../../../../../../assets/img/wrap.png"
 // actions
-import { comboboxOpen } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import { popupOpenClose } from "./../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
-const ComboBox = memo((props) => {
+const Popup = memo((props) => {
   const dispatch = useDispatch()
   const show = useSelector((state) => {
-    return state.assortment.filtersParams[props.indexF].show
+    return state.assortment.filtersParams[props.indexS].show
   })
-
   return (
-    <form className={props.styles.comboBox}>
+    <div className={props.styles.comboBox}>
       <div
         onClick={() => {
-          dispatch(comboboxOpen(props.indexF))
+          dispatch(popupOpenClose(props.indexS))
         }}
         className={props.styles.wrapper}
       >
@@ -24,8 +24,8 @@ const ComboBox = memo((props) => {
         {show ? <img src={wrap} alt="No" /> : <img src={unwrap} alt="No" />}
       </div>
       {show && <div className={props.styles.modal}>{props.children}</div>}
-    </form>
+    </div>
   )
 })
 
-export default ComboBox
+export default Popup

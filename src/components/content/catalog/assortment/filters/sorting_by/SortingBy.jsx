@@ -1,16 +1,16 @@
 import React from "react"
+import { useSelector } from "react-redux"
 // styles
 import styles from "./css/BoxSortingBy.module.css"
 // types
 import { groupSort } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
-// components
-import ComboBox from "../combo_box/ComboBox"
-import SortParam from "./sort_param/SortParam"
-import { useSelector } from "react-redux"
 import { groupFilter } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+// components
+import SortParam from "./sort_param/SortParam"
+import Popup from "./../popup/Popup"
 
 const SortingBy = () => {
-  const indexF = useSelector((state) => {
+  const indexS = useSelector((state) => {
     let index = state.assortment.filters.findIndex(
       (f) => f.group === groupFilter.SORT
     )
@@ -18,7 +18,7 @@ const SortingBy = () => {
   })
 
   const currentGroup = useSelector((state) => {
-    return state.assortment.filtersParams[indexF].params.sort.name
+    return state.assortment.filtersParams[indexS].params.sort.name
   })
 
   const getPropertes = () => {
@@ -27,7 +27,7 @@ const SortingBy = () => {
     for (var grouping in groupSort) {
       mass.push(
         <SortParam
-          indexF={indexF}
+          indexS={indexS}
           img={groupSort[grouping].img}
           name={groupSort[grouping].name}
           grouping={grouping}
@@ -40,13 +40,9 @@ const SortingBy = () => {
   }
 
   return (
-    <ComboBox
-      indexF={indexF}
-      styles={styles}
-      title={`Порядок: ${currentGroup}`}
-    >
-      <ul className={styles.collection}> {getPropertes()} </ul>
-    </ComboBox>
+    <Popup indexS={indexS} styles={styles} title={`Порядок: ${currentGroup}`}>
+      <ul className={styles.collection}>{getPropertes()}</ul>
+    </Popup>
   )
 }
 

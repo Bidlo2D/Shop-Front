@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { popupClose } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import { comboboxClose } from "../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 // styles
 import styles from "./css/CancelWindow.module.css"
 
@@ -15,7 +15,7 @@ const CancelWindow = () => {
       {busy && (
         <div
           onClick={() => {
-            dispatch(popupClose())
+            dispatch(comboboxClose())
           }}
           className={styles.modalCancel}
         />
