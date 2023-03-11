@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useHref } from "react-router-dom"
 import { useSelector } from "react-redux"
@@ -7,17 +7,17 @@ import { loadInfo } from "./../../../../../redux/reducers/content/catalog/assort
 
 const Productions = (props) => {
   const dispatch = useDispatch()
-  const href = useHref().split("/").at(-1)
+  const category = useHref().split("/").at(-1)
   const page = useSelector((state) => {
     return state.assortment.page
   })
 
-  const isCategory = (category) => {
-    return loadProducts(category, page).then((data) => {
+  useEffect(() => {
+    loadProducts(category, page).then((data) => {
       dispatch(loadInfo(data))
     })
-  }
-  isCategory(href)
+  })
+
   return <div>{props.children}</div>
 }
 

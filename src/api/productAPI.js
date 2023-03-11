@@ -10,8 +10,7 @@ export const loadProducts = async (_category, _page) => {
         else {
             request = `${localhost}/products?_limit=${_count}&_page=${_page}&_category=${_category}`;
         }
-        const response = await fetch(request)
-        return await response.json()
+        return await fetch(request).then(res => res.json())
     }
     catch (err) {
         console.log(err)

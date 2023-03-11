@@ -2,14 +2,14 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 // styles
-import styles from "./css/InputRange.module.css"
+import styles from "./css/DoubleSlider.module.css"
 // actions
 import {
   rangeChangeMax,
   rangeChangeMin,
 } from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
-const InputRange = (props) => {
+const DoubleSlider = (props) => {
   const dispatch = useDispatch()
   const step = useSelector((state) => {
     return state.assortment.filtersParams[props.index].params.step
@@ -66,4 +66,4 @@ const InputRange = (props) => {
   )
 }
 
-export default InputRange
+export default DoubleSlider

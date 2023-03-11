@@ -2,15 +2,15 @@ import React, { memo } from "react"
 // styles
 import styles from "./css/PriceBox.module.css"
 // components
-import InputNumber from "./input_number/InputNumber"
-import InputRange from "./input_range/InputRange"
+import SliderLabel from "./input_number/SliderLabel"
+import DoubleSlider from "./input_range/DoubleSlider"
 
 const PriceBox = memo(function (props) {
   return (
     <div>
       <p className={styles.price}>Цена (руб.)</p>
-      <InputRange index={props.index} />
-      <InputNumber index={props.index} />
+      <DoubleSlider index={props.index} />
+      <SliderLabel index={props.index} />
     </div>
   )
 })

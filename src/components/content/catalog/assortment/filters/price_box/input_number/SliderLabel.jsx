@@ -7,7 +7,7 @@ import {
 } from "../../../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 import { useEffect } from "react"
 
-const InputNumber = (props) => {
+const SliderLabel = (props) => {
   const dispatch = useDispatch()
   const currentMin = useSelector((state) => {
     return state.assortment.filtersParams[props.index].params.currentMin
@@ -80,4 +80,4 @@ const InputNumber = (props) => {
   )
 }
 
-export default InputNumber
+export default SliderLabel
