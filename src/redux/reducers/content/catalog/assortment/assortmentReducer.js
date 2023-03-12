@@ -97,6 +97,13 @@ export default createReducer(initialState, {
         state.products = pages.data;
         state.total = pages.total;
         state.countPages = pages.countPages;
+        const index_price = state.filters.findIndex(
+            (f) => f.group === groupFilter.RANGE && f.title === "Цена"
+        )
+        state.filtersParams[index_price].params.max = pages.max;
+        state.filtersParams[index_price].params.min = pages.min;
+        state.filtersParams[index_price].params.currentMax = pages.max;
+        state.filtersParams[index_price].params.currentMin = pages.min;
     },
     [changePage]: function (state, action) {
         const page = action.payload;
