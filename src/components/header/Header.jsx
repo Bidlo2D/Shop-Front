@@ -11,7 +11,8 @@ import heart from "../../assets/img/heart.png"
 import Menu from "../Menu"
 import OrgName from "../OrgName"
 import SearchBarHeader from "./SearchBarHeader"
-import ButtonCatalog from "../ButtonCatalog"
+import ButtonTextLink from "../ButtonTextLink"
+import ButtonImgLink from "./../ButtonImgLink"
 
 const Header = () => {
   const visible = useSelector((state) => {
@@ -19,7 +20,7 @@ const Header = () => {
   })
 
   const titles = [
-    <ButtonCatalog>Каталог</ButtonCatalog>,
+    <ButtonTextLink to="catalog">Каталог</ButtonTextLink>,
     <p>Дизайнерам</p>,
     <p>Шоу-рум</p>,
     <p>Доставка и оплата</p>,
@@ -28,10 +29,10 @@ const Header = () => {
   const images = [
     <SearchBarHeader />,
     <div>
-      <img src={heart} alt="" />
+      <ButtonImgLink to="favourites" image={heart} />
     </div>,
     <div>
-      <img src={bucket} alt="" />
+      <ButtonImgLink to="bucket" image={bucket} />
     </div>,
   ]
 

@@ -5,7 +5,7 @@ import styles from "./css/Catalog.module.css"
 // components
 import TabSection from "./tab_sections/TabSections"
 import Assortment from "./assortment/Assortment"
-import Path from "./path/Path"
+import Path from "./../path/Path"
 
 const Catalog = () => {
   return (

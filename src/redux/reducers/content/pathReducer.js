@@ -39,6 +39,10 @@ export default createReducer(initialState, {
                 state.currentDirectory = "Главная / Каталог / Комоды";
                 state.currentСategory = "Дизайнерские комоды";
                 break;
+            case "/bucket":
+                state.currentDirectory = "Главная / Корзина";
+                state.currentСategory = "Ваш заказ";
+                break;
             default:
                 state.currentDirectory = "???";
                 state.currentСategory = "???";

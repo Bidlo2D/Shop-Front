@@ -18,12 +18,10 @@ const Productions = (props) => {
 
   useEffect(() => {
     dispatch(loaderOn())
-    setTimeout(() => {
-      loadProducts(category, page).then((data) => {
-        dispatch(loadInfo(data))
-        dispatch(loaderOff())
-      })
-    }, 2000)
+    loadProducts(category, page).then((data) => {
+      dispatch(loadInfo(data))
+      dispatch(loaderOff())
+    })
   })
 
   return <div>{props.children}</div>

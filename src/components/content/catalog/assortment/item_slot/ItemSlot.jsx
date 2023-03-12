@@ -18,7 +18,7 @@ const ItemSlot = () => {
   return (
     <div className={styles.itemSlot}>
       {isLoading
-        ? [...new Array(9)].map(() => <ItemSkeleton />)
+        ? [...new Array(9)].map((item, i) => <ItemSkeleton key={i} />)
         : items.map((item, i) => (
             <Item
               key={i}

@@ -1,5 +1,5 @@
 import React from "react"
-import ButtonCatalog from "../../../ButtonCatalog"
+import ButtonTextLink from "../../../ButtonTextLink"
 // styles
 import styles from "./css/Title.module.css"
 
@@ -10,7 +10,9 @@ const Title = () => {
         <p className={styles.bigText}>Дизайнерская мебель</p>
         <p className={styles.addition}>Наполни пространство элегантностью</p>
       </div>
-      <ButtonCatalog style={styles.button}>Смотреть каталог</ButtonCatalog>
+      <ButtonTextLink to="catalog" style={styles.button}>
+        Смотреть каталог
+      </ButtonTextLink>
     </div>
   )
 }

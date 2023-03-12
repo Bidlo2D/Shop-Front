@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const ButtonCatalog = (props) => {
+const ButtonTextLink = (props) => {
   return (
-    <Link to="catalog">
+    <Link to={props.to}>
       <p className={props.style}>{props.children}</p>
     </Link>
   )
 }
 
-export default ButtonCatalog
+export default ButtonTextLink

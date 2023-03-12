@@ -38,6 +38,7 @@ export const comboboxOpen = createAction("COMBOBOX_OPEN")
 export const comboboxClose = createAction("COMBOBOX_CLOSE")
 export const popupOpenClose = createAction("POPUP_OPEN_CLOSE")
 export const changePage = createAction("CHANGE_PAGE")
+export const changeCountPage = createAction("CHANGE_COUNT_PAGE")
 export const rangeChangeMin = createAction("RANGE_CHANGE_MIN")
 export const rangeChangeMax = createAction("RANGE_CHANGE_MAX")
 export const paramChangeCheck = createAction("PARAM_CHANGE_CHECK")
@@ -111,6 +112,10 @@ export default createReducer(initialState, {
     [changePage]: function (state, action) {
         const page = action.payload;
         state.page = page;
+    },
+    [changeCountPage]: function (state, action) {
+        const count = action.payload;
+        state.countPages = count;
     },
     [loaderOn]: function (state) {
         state.isLoading = true;
