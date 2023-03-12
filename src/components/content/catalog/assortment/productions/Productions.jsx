@@ -3,7 +3,11 @@ import { useDispatch } from "react-redux"
 import { useHref } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { loadProducts } from "../../../../../api/productAPI"
-import { loadInfo } from "./../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
+import {
+  loaderOn,
+  loaderOff,
+  loadInfo,
+} from "./../../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
 const Productions = (props) => {
   const dispatch = useDispatch()
@@ -13,9 +17,13 @@ const Productions = (props) => {
   })
 
   useEffect(() => {
-    loadProducts(category, page).then((data) => {
-      dispatch(loadInfo(data))
-    })
+    dispatch(loaderOn())
+    setTimeout(() => {
+      loadProducts(category, page).then((data) => {
+        dispatch(loadInfo(data))
+        dispatch(loaderOff())
+      })
+    }, 2000)
   })
 
   return <div>{props.children}</div>

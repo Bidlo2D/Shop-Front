@@ -16,6 +16,7 @@ const initialState = {
     total: 0,
     page: 0,
     countPages: 0,
+    isLoading: true,
     filters: [
         { id: 0, group: groupFilter.CHECKLIST, title: "Цвет" },
         { id: 1, group: groupFilter.CHECKLIST, title: "Стиль" },
@@ -42,6 +43,8 @@ export const rangeChangeMax = createAction("RANGE_CHANGE_MAX")
 export const paramChangeCheck = createAction("PARAM_CHANGE_CHECK")
 export const changeSort = createAction("CHANGE_SORT")
 export const loadInfo = createAction("LOAD_INFO")
+export const loaderOff = createAction("LOADER_OFF")
+export const loaderOn = createAction("LOADER_ON")
 
 export default createReducer(initialState, {
     [comboboxOpen]: function (state, action) {
@@ -108,5 +111,11 @@ export default createReducer(initialState, {
     [changePage]: function (state, action) {
         const page = action.payload;
         state.page = page;
+    },
+    [loaderOn]: function (state) {
+        state.isLoading = true;
+    },
+    [loaderOff]: function (state) {
+        state.isLoading = false;
     }
 })

@@ -31,7 +31,7 @@ const DoubleSlider = (props) => {
     <div className={styles.slide}>
       <div className={styles.highlight} />
       <input
-        onInput={(event) => {
+        onChange={(event) => {
           dispatch(
             rangeChangeMin({
               value: Number(event.target.value),
@@ -47,7 +47,7 @@ const DoubleSlider = (props) => {
         id="lower"
       />
       <input
-        onInput={(event) => {
+        onChange={(event) => {
           dispatch(
             rangeChangeMax({
               value: Number(event.target.value),
