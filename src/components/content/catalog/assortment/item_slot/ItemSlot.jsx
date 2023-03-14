@@ -22,6 +22,7 @@ const ItemSlot = () => {
         : items.map((item, i) => (
             <Item
               key={i}
+              id={item.id}
               image={item.image}
               category={item.category}
               name={item.name}

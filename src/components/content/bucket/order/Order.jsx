@@ -14,6 +14,7 @@ const Order = () => {
       {products.map((item, i) => (
         <ItemOrder
           key={i}
+          id={item.id}
           name={item.name}
           color={item.color}
           image={item.image}

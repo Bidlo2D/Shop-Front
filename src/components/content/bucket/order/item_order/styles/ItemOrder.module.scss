@@ -7,7 +7,6 @@ $size-image-button: 30px;
 
 .itemOrder {
   display: flex;
-  justify-content: space-between;
   height: $size-item;
 }
 
@@ -34,6 +33,25 @@ $size-image-button: 30px;
   margin: auto auto;
 }
 
+.count {
+  display: flex;
+  position: relative;
+  font-weight: bold;
+  font-size: 30px;
+  margin: auto 25px;
+  height: $size-button;
+  width: $size-button;
+  span {
+    position: absolute;
+    text-align: center;
+    margin-top: 5px;
+    height: $size-button;
+    width: $size-button;
+    left: 0;
+    right: 0;
+  }
+}
+
 .button {
   height: $size-button;
   width: $size-button;
@@ -44,12 +62,6 @@ $size-image-button: 30px;
     height: $size-image-button;
     width: $size-image-button;
   }
-}
-
-.count {
-  font-weight: bold;
-  font-size: 30px;
-  margin: auto 25px;
 }
 
 .price {

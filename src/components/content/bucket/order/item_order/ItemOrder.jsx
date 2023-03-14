@@ -1,4 +1,5 @@
 import React from "react"
+import { useDispatch } from "react-redux"
 //styles
 import styles from "./css/ItemOrder.module.css"
 // components
@@ -6,8 +7,12 @@ import ImageAPI from "./../../../catalog/assortment/item_slot/item/image_api/Ima
 // images
 import plus from "../../../../../assets/img/plus.png"
 import minus from "../../../../../assets/img/minus.png"
+import { decrementCount } from "../../../../../redux/reducers/content/bucket/bucketReducer"
+import Counter from "./counter/Counter"
+import { incrementCount } from "./../../../../../redux/reducers/content/bucket/bucketReducer"
 
 const ItemOrder = (props) => {
+  const dispatch = useDispatch()
   return (
     <div className={styles.itemOrder}>
       <ImageAPI style={styles.image} name={props.image} />
@@ -18,11 +23,21 @@ const ItemOrder = (props) => {
         <li>Размеры: {props.sizes}</li>
       </ul>
       <div className={styles.counter}>
-        <button className={styles.button}>
+        <button
+          onClick={() => {
+            dispatch(decrementCount(props.id))
+          }}
+          className={styles.button}
+        >
           <img src={minus} alt="No" />
         </button>
-        <span className={styles.count}>1</span>
-        <button className={styles.button}>
+        <Counter style={styles.count} id={props.id} />
+        <button
+          onClick={() => {
+            dispatch(incrementCount(props.id))
+          }}
+          className={styles.button}
+        >
           <img src={plus} alt="No" />
         </button>
       </div>
