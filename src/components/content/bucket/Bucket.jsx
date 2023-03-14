@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom"
 import styles from "./css/Bucket.module.css"
 // components
 import Path from "./../path/Path"
-import Order from "./orders/Order"
+import Order from "./order/Order"
 import MakingOrder from "./making_order/MakingOrder"
 
 const Bucket = () => {

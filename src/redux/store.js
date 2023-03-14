@@ -4,11 +4,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import searchReducer from "./reducers/header/searchReducer";
 import ideaListReducer from "./reducers/content/main_page/ideaListReducer";
 import pathReducer from "./reducers/content/pathReducer";
+import bucketReducer from "./reducers/content/bucket/bucketReducer";
 import assortmentReducer from "./reducers/content/catalog/assortment/assortmentReducer";
 
 const rootReducer = combineReducers({
     search: searchReducer,
     path: pathReducer,
+    bucket: bucketReducer,
     assortment: assortmentReducer,
     ideas: ideaListReducer
 });

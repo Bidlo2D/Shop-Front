@@ -1,0 +1,59 @@
+@import "../../../../../styles/vars.scss";
+@import "../../../../css/FontsContent.css";
+
+$size-item: 260px;
+$size-button: 40px;
+$size-image-button: 30px;
+
+.itemOrder {
+  display: flex;
+  justify-content: space-between;
+  height: $size-item;
+}
+
+.image {
+  height: $size-item;
+  margin: auto auto;
+}
+
+.description {
+  margin: auto auto;
+  :first-child {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 0px;
+  }
+  li {
+    margin-top: 10px;
+    font-family: "Circe-Light";
+  }
+}
+
+.counter {
+  display: flex;
+  margin: auto auto;
+}
+
+.button {
+  height: $size-button;
+  width: $size-button;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 50%;
+  img {
+    height: $size-image-button;
+    width: $size-image-button;
+  }
+}
+
+.count {
+  font-weight: bold;
+  font-size: 30px;
+  margin: auto 25px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 30px;
+  margin: auto auto;
+}
