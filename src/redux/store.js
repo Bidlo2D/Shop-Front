@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 // reducers
-import searchReducer from "./reducers/header/searchReducer";
+import searchReducer from "./reducers/search/searchReducer";
 import ideaListReducer from "./reducers/content/main_page/ideaListReducer";
 import pathReducer from "./reducers/content/pathReducer";
 import bucketReducer from "./reducers/content/bucket/bucketReducer";

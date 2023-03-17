@@ -16,3 +16,12 @@ export const loadProducts = async (_category, _page) => {
         console.log(err)
     }
 }
+
+export const searchProducts = async (_name) => {
+    try {
+        return await fetch(`${localhost}/products?_search=${_name}`).then(res => res.json())
+    }
+    catch (err) {
+        console.log(err)
+    }
+}

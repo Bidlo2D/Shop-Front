@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useState, useEffect } from "react"
 //action
-import { searchDeployment } from "../../redux/reducers/header/searchReducer"
+import { searchDeployment } from "../../redux/reducers/search/searchReducer"
 // images
 import search from "../../assets/img/search.png"
 // styles
