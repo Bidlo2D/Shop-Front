@@ -22,7 +22,9 @@ const SearchBlockResult = () => {
           />
         ))
       ) : (
-        <div>По вашему запросу ничего не найдено</div>
+        <div className={styles.noFound}>
+          По вашему запросу ничего не найдено
+        </div>
       )}
     </div>
   )

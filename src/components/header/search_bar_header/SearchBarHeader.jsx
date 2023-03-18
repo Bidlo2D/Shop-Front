@@ -52,7 +52,7 @@ const SearchBarHeader = () => {
             placeholder="Поиск по каталогу"
             value={text}
           />
-          <SearchBlockResult />
+          {text && <SearchBlockResult />}
         </div>
       )}
     </form>
