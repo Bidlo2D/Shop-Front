@@ -1,0 +1,29 @@
+@import "../../../styles/vars.scss";
+.formSearchOn {
+  display: flex;
+  position: relative;
+  padding: 5px;
+  background-color: white;
+  border-radius: $border-radius-main $border-radius-main 0px 0px;
+}
+
+.formSearchOff {
+  display: flex;
+  padding: 5px;
+  border-radius: $border-radius-main;
+}
+
+.inputText {
+  width: 475px;
+  margin-left: 15px;
+  background: transparent;
+}
+
+.image {
+  width: $icon-width-height;
+  height: $icon-width-height;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(135%);
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../../styles/vars.scss";
+.block {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  background: white;
+  padding: 5px;
+  width: 100%;
+  height: max-content;
+  max-height: 500px;
+  opacity: 0.95;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0 0% 50%);
+  border-radius: 0 0 $border-radius-main $border-radius-main;
+  z-index: 3;
+}

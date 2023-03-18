@@ -1,0 +1,35 @@
+@import "../../../../../styles/vars.scss";
+//@import "../../../../css/FontsContent.css";
+
+$size-item: 120px;
+$size-button: 40px;
+$size-image-button: 30px;
+
+.found {
+  display: flex;
+  height: $size-item;
+}
+
+.image {
+  height: $size-item;
+  margin: auto auto;
+}
+
+.description {
+  margin: auto auto;
+  :first-child {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 0px;
+  }
+  li {
+    margin-top: 10px;
+    font-family: "Circe-Light";
+  }
+}
+
+.price {
+  font-weight: bold;
+  font-size: 24px;
+  margin: auto auto;
+}

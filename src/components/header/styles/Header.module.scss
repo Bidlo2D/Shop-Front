@@ -7,3 +7,12 @@
   background-color: $color-white;
   width: 1000px;
 }
+
+.image {
+  width: $icon-width-height;
+  height: $icon-width-height;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(135%);
+  }
+}

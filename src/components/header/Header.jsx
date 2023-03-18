@@ -1,8 +1,6 @@
 import React from "react"
-import { useSelector } from "react-redux"
 // styles
 import styles from "./css/Header.module.css"
-import textStyle from "./css/MenuText.module.css"
 import imageStyle from "./css/MenuImage.module.css"
 // images
 import bucket from "../../assets/img/bucketShop.png"
@@ -10,36 +8,21 @@ import heart from "../../assets/img/heart.png"
 // components
 import Menu from "../Menu"
 import OrgName from "../OrgName"
-import SearchBarHeader from "./SearchBarHeader"
-import ButtonTextLink from "../ButtonTextLink"
+import SearchBarHeader from "./search_bar_header/SearchBarHeader"
 import ButtonImgLink from "./../ButtonImgLink"
+import MenuText from "./menu_text/MenuText"
 
 const Header = () => {
-  const visible = useSelector((state) => {
-    return state.search.visible
-  })
-
-  const titles = [
-    <ButtonTextLink to="catalog">Каталог</ButtonTextLink>,
-    <p>Дизайнерам</p>,
-    <p>Шоу-рум</p>,
-    <p>Доставка и оплата</p>,
-  ]
-
   const images = [
     <SearchBarHeader />,
-    <div>
-      <ButtonImgLink to="favourites" image={heart} />
-    </div>,
-    <div>
-      <ButtonImgLink to="bucket" image={bucket} />
-    </div>,
+    <ButtonImgLink style={styles.image} to="favourites" image={heart} />,
+    <ButtonImgLink style={styles.image} to="bucket" image={bucket} />,
   ]
 
   return (
     <header className={styles.header}>
       <OrgName />
-      {visible ? <Menu style={textStyle.menu} items={titles} /> : null}
+      <MenuText />
       <Menu style={imageStyle.menu} items={images} />
     </header>
   )
