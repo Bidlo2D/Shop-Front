@@ -1,18 +1,15 @@
 import React from "react"
-// Components
-import Menu from "../Menu"
-import OrgName from "../OrgName"
-// Styles
+// components
+import Menu from "../universal/Menu"
+import ButtonTextLink from "../universal/ButtonTextLink"
+// styles
 import styles from "./css/About.module.css"
 import imageStyle from "./css/MenuImage.module.css"
-//import textStyle from "../css/MenuText.module.css"
-
 // images
 import instagram from "../../assets/img/instagram.png"
 import facebook from "../../assets/img/facebook.png"
 import youtube from "../../assets/img/youtube.png"
 import telegram from "../../assets/img/telegram.png"
-import ButtonTextLink from "../ButtonTextLink"
 
 const About = () => {
   const images = [
@@ -22,7 +19,9 @@ const About = () => {
     <img src={telegram} alt="" />,
   ]
   const leftBlock = [
-    <OrgName />,
+    <ButtonTextLink to="/" style={styles.org}>
+      Antonio Lucchi
+    </ButtonTextLink>,
     <Menu style={imageStyle.menu} items={images} />,
     <p>Магазин дизайнерской мебели</p>,
     <p>+7 925 560 10 10</p>,

@@ -1,5 +1,5 @@
 import React from "react"
-import ButtonTextLink from "../../../ButtonTextLink"
+import ButtonTextLink from "../../../universal/ButtonTextLink"
 // styles
 import styles from "./css/Title.module.css"
 

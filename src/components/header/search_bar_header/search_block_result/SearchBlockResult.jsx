@@ -2,7 +2,9 @@ import React from "react"
 import { useSelector } from "react-redux"
 // styles
 import styles from "./css/SearchBlockResult.module.css"
-import FoundItem from "./found/FoundItem"
+import stylesFound from "./css/FoundItem.module.css"
+// components
+import Product from "./../../../universal/Product"
 
 const SearchBlockResult = () => {
   const found = useSelector((state) => {
@@ -10,16 +12,9 @@ const SearchBlockResult = () => {
   })
   return (
     <div className={styles.block}>
-      {found.length > 0 ? (
+      {found?.length > 0 ? (
         found.map((item, i) => (
-          <FoundItem
-            key={i}
-            id={item.id}
-            name={item.name}
-            color={item.color}
-            image={item.image}
-            price={item.price}
-          />
+          <Product key={i} product={item} styles={stylesFound} />
         ))
       ) : (
         <div className={styles.noFound}>

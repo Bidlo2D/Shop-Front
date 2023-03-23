@@ -3,7 +3,7 @@ import React from "react"
 import styles from "./css/Order.module.css"
 import { useSelector } from "react-redux"
 import ItemOrder from "./item_order/ItemOrder"
-import ButtonTextLink from "./../../../ButtonTextLink"
+import ButtonTextLink from "./../../../universal/ButtonTextLink"
 
 const Order = () => {
   const products = useSelector((state) => {

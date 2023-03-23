@@ -10,6 +10,7 @@
     margin-bottom: 15px;
   }
 }
+
 .middleBlock {
   margin-left: auto;
   margin-right: auto;
@@ -22,6 +23,7 @@
     }
   }
 }
+
 .rightBlock {
   li {
     cursor: pointer;
@@ -32,4 +34,10 @@
       }
     }
   }
+}
+
+.org {
+  font-size: 21px;
+  text-transform: uppercase;
+  cursor: pointer;
 }

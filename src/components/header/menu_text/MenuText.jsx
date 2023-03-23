@@ -1,10 +1,10 @@
 import React from "react"
 import { useSelector } from "react-redux"
 // components
-import Menu from "../../Menu"
+import Menu from "../../universal/Menu"
 // styles
 import textStyle from "./css/MenuText.module.css"
-import ButtonTextLink from "../../ButtonTextLink"
+import ButtonTextLink from "../../universal/ButtonTextLink"
 
 /* Taking into account the parent where 'justify-content: space-between' */
 const MenuText = () => {

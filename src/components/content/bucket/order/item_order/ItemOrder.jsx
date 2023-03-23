@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 //styles
 import styles from "./css/ItemOrder.module.css"
 // components
-import ImageAPI from "./../../../catalog/assortment/item_slot/item/image_api/ImageAPI"
+import ImageAPI from "../../../../universal/ImageAPI"
 // images
 import plus from "../../../../../assets/img/plus.png"
 import minus from "../../../../../assets/img/minus.png"

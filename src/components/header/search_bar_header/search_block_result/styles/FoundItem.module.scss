@@ -1,10 +1,10 @@
-@import "../../../../../styles/vars.scss";
+@import "../../../../styles/vars.scss";
 
 $size-item: 120px;
 $size-button: 40px;
 $size-image-button: 30px;
 
-.found {
+.product {
   display: flex;
   cursor: pointer;
   padding: 5px;

@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const ItemSkeleton = (props) => (
+const ProductSkeleton = (props) => (
   <ContentLoader
     className="item"
     speed={2}
@@ -18,4 +18,4 @@ const ItemSkeleton = (props) => (
   </ContentLoader>
 )
 
-export default ItemSkeleton
+export default ProductSkeleton

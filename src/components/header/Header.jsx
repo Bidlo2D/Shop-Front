@@ -6,10 +6,10 @@ import imageStyle from "./css/MenuImage.module.css"
 import bucket from "../../assets/img/bucketShop.png"
 import heart from "../../assets/img/heart.png"
 // components
-import Menu from "../Menu"
-import OrgName from "../OrgName"
+import Menu from "../universal/Menu"
 import SearchBarHeader from "./search_bar_header/SearchBarHeader"
-import ButtonImgLink from "./../ButtonImgLink"
+import ButtonImgLink from "./../universal/ButtonImgLink"
+import ButtonTextLink from "./../universal/ButtonTextLink"
 import MenuText from "./menu_text/MenuText"
 
 const Header = () => {
@@ -21,7 +21,9 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <OrgName />
+      <ButtonTextLink style={styles.org} to="/">
+        Antonio Lucchi
+      </ButtonTextLink>
       <MenuText />
       <Menu style={imageStyle.menu} items={images} />
     </header>

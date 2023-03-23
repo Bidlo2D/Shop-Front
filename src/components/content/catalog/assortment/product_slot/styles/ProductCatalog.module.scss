@@ -1,17 +1,12 @@
 @import "../../../../css/FontsContent.css";
 
-.item {
+.product {
   cursor: pointer;
   height: 375px;
   text-align: center;
 }
 
-.image {
-  height: 260px;
-  margin: auto auto;
-}
-
-.textBlock {
+.properties {
   margin-top: 20px;
   p {
     width: 100%;
@@ -19,14 +14,22 @@
   }
 }
 
-.title {
+.image {
+  height: 260px;
+  margin: auto auto;
+}
+
+.name {
   font-size: large;
   font-family: "Circe-Bold";
+  margin-top: 20px;
 }
 
 .description {
   font-size: 16px;
   font-family: "Circe-Light";
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .price {

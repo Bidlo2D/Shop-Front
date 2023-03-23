@@ -1,10 +1,11 @@
 import React, { useEffect } from "react"
+import { useDispatch } from "react-redux"
 // components
-import ItemSlot from "./item_slot/ItemSlot"
+import ProductSlot from "./product_slot/ProductSlot"
 import Filters from "./filters/Filters"
 import PageBar from "./page_bar/PageBar"
 import Productions from "./productions/Productions"
-import { useDispatch } from "react-redux"
+// actions
 import { changePage } from "../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 import { changeCountPage } from "./../../../../redux/reducers/content/catalog/assortment/assortmentReducer"
 
@@ -18,7 +19,7 @@ const Assortment = () => {
     <div className="assortment">
       <Filters />
       <Productions>
-        <ItemSlot />
+        <ProductSlot />
       </Productions>
       <PageBar />
     </div>
