@@ -24,7 +24,7 @@ const Productions = (props) => {
     })
   })
 
-  return <div>{props.children}</div>
+  return <div className="productions">{props.children}</div>
 }
 
 export default Productions

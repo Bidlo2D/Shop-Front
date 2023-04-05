@@ -22,10 +22,16 @@ const ProductSlot = () => {
     <div className={styles.productSlot}>
       {isLoading
         ? [...new Array(9)].map((item, i) => <ProductSkeleton key={i} />)
-        : items.map((item, i) => (
+        : items?.map((item, i) => (
             <Product
               key={i}
-              product={item}
+              product={{
+                image: item.image,
+                category: item.category,
+                description: item.description,
+                name: item.name,
+                price: item.price,
+              }}
               action={addItem}
               styles={stylesProduct}
             />

@@ -14,7 +14,16 @@ const SearchBlockResult = () => {
     <div className={styles.block}>
       {found?.length > 0 ? (
         found.map((item, i) => (
-          <Product key={i} product={item} styles={stylesFound} />
+          <Product
+            key={i}
+            product={{
+              image: item.image,
+              category: item.category,
+              name: item.name,
+              price: item.price,
+            }}
+            styles={stylesFound}
+          />
         ))
       ) : (
         <div className={styles.noFound}>
