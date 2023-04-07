@@ -13,7 +13,7 @@ const Assortment = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(changePage(0))
-    dispatch(changeCountPage(1))
+    //dispatch(changeCountPage(1))
   })
   return (
     <div className="assortment">

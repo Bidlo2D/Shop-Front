@@ -10,8 +10,8 @@ export const loadProducts = async (_category, _page) => {
         console.log(err)
     }
 }
-/* 
-export const loadProducts = async (_category, _colors, _materials, _prices, _page) => {
+
+export const loadFilterProducts = async (_category, _colors, _materials, _prices, _page) => {
     try {
         let request = "";
         if (_category === "all") {
@@ -25,7 +25,7 @@ export const loadProducts = async (_category, _colors, _materials, _prices, _pag
     catch (err) {
         console.log(err)
     }
-} */
+}
 
 export const searchProducts = async (_name) => {
     try {
